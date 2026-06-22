@@ -46,15 +46,15 @@ const Hero = () => {
 
             <div className="w-full flex flex-col md:flex-row justify-center items-center sm:space-x-0 ">
               <MagicButton
-                title="My Resumé"
+                title="My Documents"
                 icon={<FaFileSignature />}
                 position="right"
                 otherClasses="group transition-transform duration-300 hover:scale-105"
                 handleClick={() => window.open(
-                  "https://drive.google.com/file/d/16_KDCjM10A5jgRFTQKvMYIt_LVXsa6T2/view?usp=sharing"
+                  "https://drive.google.com/drive/folders/1GdnS6J7km5BBwSA6J1Dn2pU5GQdwqxyP?usp=sharing"
                 )} />
                 <SocialButtons/>
-            </div> 
+            </div>
           </div>
 
           {/* Right Column: Portrait */}
@@ -70,7 +70,7 @@ const Hero = () => {
             )}
           >
             <Image
-              src="/hero.jpg"
+              src="/hero.JPEG"
               alt="Tin Phan"
               priority
               quality={100}
