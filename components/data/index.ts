@@ -9,7 +9,7 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "Enthusiastic web developer with a passion for clean code and creative design ",
+    title: "Dedicated Full-Stack Developer with hands-on experience bridging cross-platform mobile systems and cloud-native backends",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
     imgClassName: "w-full h-full",
@@ -20,7 +20,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "Responsive & Reliable in everyway",
+    title: "Grounded in strict operational efficiency, resilience, and agile team communication",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -30,8 +30,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
+    title: "My Core Tech Stack",
+    description: "Constantly expanding and optimizing",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -40,7 +40,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Curious, creative, and code-loving — crafting modern web experiences",
+    title: "Architecting software through structural design principles like Feature-Sliced Design (FSD) and MVC",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -48,11 +48,10 @@ export const gridItems = [
     img: "/grid.svg",
     spareImg: "/b4.svg",
   },
-
   {
     id: 5,
-    title: "Reacquiring Full-Stack Proficiency in Mobile and Web Development",
-    description: "The Inside Scoop",
+    title: "Successfully resuming full-stack proficiency after serving honorably in national military service (2023 - 2026)",
+    description: "The Timeline",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -61,7 +60,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Do you want to start a project together?",
+    title: "Looking for an adaptable Full-Stack / Mobile Developer to join your engineering crew?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -100,54 +99,50 @@ export const services = [
 
 export const blogItems = [
   {
-    title: "Medic",
-    image:
-      "/blog6.jpg",
-    className: "absolute top-10 left-[20%] rotate-[-5deg]",
-  },
-  {
-    title: "Military",
-    image:
-      "/blog5.jpg",
-    className: "absolute top-40 left-[25%] rotate-[-7deg]",
-  },
-  {
-    title: "Friends",
-    image:
-      "/blog1.jpg",
-    className: "absolute top-5 left-[40%] rotate-[8deg]",
-  },
-  {
-    title: "Travel",
-    image:
-      "/blog4.jpg",
-    className: "absolute top-32 left-[55%] rotate-[10deg]",
-  },
-  {
-    title: "Achivements",
-    image:
-      "/blog7.jpg",
+    title: "UEF IT Graduation",
+    image: "/blog7.jpg",
     className: "absolute top-20 right-[35%] rotate-[2deg]",
   },
   {
-    title: "Passion",
-    image:
-      "/blog2.jpg",
+    title: "Pharmatech Internship",
+    image: "/blog6.jpg",
+    className: "absolute top-10 left-[20%] rotate-[-5deg]",
+  },
+  {
+    title: "Military Honor & Discipline",
+    image: "/blog5.jpg",
+    className: "absolute top-40 left-[25%] rotate-[-7deg]",
+  },
+  {
+    title: "Next.js & Cloud Database Sprint",
+    image: "/blog4.jpg",
+    className: "absolute top-32 left-[55%] rotate-[10deg]",
+  },
+  {
+    title: "Music Engineering & Guitar Sessions",
+    image: "/blog2.jpg",
     className: "absolute top-8 left-[30%] rotate-[4deg]",
   },
-
+  {
+    title: "Collaborative Open Source Labs",
+    image: "/blog1.jpg",
+    className: "absolute top-5 left-[40%] rotate-[8deg]",
+  },
 ];
 
 
 export const tools = [
-  { name: "React", icon: "/icons/react.png", description: "UI Library" },
-  { name: "Next.js", icon: "/icons/next.png", description: "Fullstack Framework" },
-  { name: "Tailwind CSS", icon: "/icons/tailwind.png", description: "Utility-First CSS" },
-  { name: "TypeScript", icon: "/icons/typescript.png", description: "Typed JS" },
-  { name: "Laravel", icon: "/icons/laravel.png", description: "PHP Web Framework" },
-  { name: "Vercel", icon: "/icons/vercel.png", description: "Deployment Platform" },
-  { name: "C#", icon: "/icons/csharp.svg", description: ".NET Language" },
-  { name: "Dart", icon: "/icons/dart.png", description: "UI-Focused Language" },
-  { name: "JavaScript", icon: "/icons/javascript.png", description: "Dynamic Scripting Language" },
+  { name: "Next.js", icon: "/tools/next.png", description: "React Fullstack Framework" },
+  { name: "React", icon: "/tools/react.png", description: "Frontend UI Library" },
+  { name: "Flutter", icon: "/tools/flutter.png", description: "Cross-Platform Mobile" },
+  { name: "TypeScript", icon: "/tools/typescript.png", description: "Strongly Typed JS" },
+  { name: "Node.js", icon: "/tools/node.png", description: "Backend Runtime Environment" },
+  { name: "Prisma", icon: "/tools/prisma.png", description: "Type-Safe Relational ORM" },
+  { name: "PostgreSQL", icon: "/tools/postgres.png", description: "Cloud SQL Database" },
+  { name: "Firebase", icon: "/tools/firebase.png", description: "Serverless Auth & Firestore" },
+  { name: "Laravel", icon: "/tools/laravel.png", description: "PHP Framework Architecture" },
+  { name: "Tailwind CSS", icon: "/tools/tailwind.png", description: "Utility-First CSS Layouts" },
+  { name: "Redux Toolkit", icon: "/tools/redux.png", description: "Global App State Management" },
+  { name: "C++", icon: "/tools/c+.png", description: "Foundational OOP Languages" },
+  { name: "Java", icon: "/tools/java.png", description: "Foundational OOP Languages" },
 ];
-
