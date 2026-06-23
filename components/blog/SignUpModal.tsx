@@ -50,9 +50,9 @@ export default function SignUpModal() {
             // Handle Redux Action
             dispatch(signInUser(
               {
-              name: currentUser.displayName,
-              username: currentUser.email!.split('@')[0],
-              email: currentUser.email,
+              name: currentUser.displayName ?? 'Guest',
+              username: currentUser.email?.split('@')[0] ?? 'Guest0000',
+              email: currentUser.email ?? 'guest@gmail.com',
               uid: currentUser.uid,
               }
           ))
