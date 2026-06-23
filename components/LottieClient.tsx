@@ -1,15 +1,11 @@
 'use client'
-
-import Lottie, { Options } from 'react-lottie'
+import Lottie from "lottie-react";
 
 interface LottieClientProps {
-  options: Options
-  height?: number | string
-  width?: number | string
+  animationData: any; // lottie-react uses animationData instead of 'options'
+  className?: string;
 }
 
-const LottieClient = ({ options, height, width }: LottieClientProps) => {
-  return <Lottie options={options} height={height} width={width} />
+export default function LottieClient({ animationData, className }: LottieClientProps) {
+  return <Lottie animationData={animationData} className={className} />;
 }
-
-export default LottieClient
