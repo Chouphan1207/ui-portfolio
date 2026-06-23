@@ -29,8 +29,8 @@ export default function SignInModal() {
       dispatch(
         signInUser({
           name: user.displayName || 'User',
-          username: user.email?.split('@')[0] || 'user0000',
-          email: user.email,
+          username: user.email?.split('@')[0] || 'Guest',
+          email: user.email || 'guest@gmail.com',
           uid: user.uid,
         })
       )
