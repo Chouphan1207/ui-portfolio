@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 interface UserState {
   name: string
   username: string
-  email: string | null
+  email: string
   uid: string
 }
 
