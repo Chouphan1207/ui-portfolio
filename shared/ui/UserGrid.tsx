@@ -6,7 +6,7 @@ import Image from 'next/image'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { signOutUser } from '@/redux/slices/userSlice'
-import SignInModal from '@/app/blog/modals/SignInModal'
+import SignInModal from '@/components/blog/SignInModal'
 import { AppDispatch, RootState } from '@/redux/store'
 import { closeSignInModal, closeSignUpModal } from '@/redux/slices/modalSlice'
 import { useRouter } from 'next/navigation'
@@ -52,26 +52,26 @@ const UserGrid = () => {
       />
       <div
         className="
-          flex 
-          flex-col 
-          ml-0 
+          flex
+          flex-col
+          ml-0
           max-w-10
-          opacity-0 
-          translate-x-[-10px] 
-          overflow-hidden 
-          whitespace-nowrap 
-          transition-all 
-          duration-500 
-          ease-in-out 
-          group-hover:max-w-40 
-          group-hover:opacity-100 
-          group-hover:translate-x-0 
+          opacity-0
+          translate-x-[-10px]
+          overflow-hidden
+          whitespace-nowrap
+          transition-all
+          duration-500
+          ease-in-out
+          group-hover:max-w-40
+          group-hover:opacity-100
+          group-hover:translate-x-0
           group-hover:ml-3
 
-          md:max-w-40 
-          md:opacity-100 
-          md:translate-x-0 
-          md:ml-3 
+          md:max-w-40
+          md:opacity-100
+          md:translate-x-0
+          md:ml-3
           text-sm
         "
       >

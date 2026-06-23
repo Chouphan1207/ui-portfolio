@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { useLoading } from '@/app/loading-context'
+import { useLoading } from '@/lib/loading/loading-context'
 
 const LoadingIntro = () => {
   const [progress, setProgress] = useState(0)

@@ -2,7 +2,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 
-const World = dynamic(() => import("./Globe").then((m) => m.World), {
+const World = dynamic(() => import("../Globe").then((m) => m.World), {
   ssr: false,
 });
 

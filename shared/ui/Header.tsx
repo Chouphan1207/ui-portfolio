@@ -3,12 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Nav from './Nav';
-import MobileNav from './MobileNav';
+import Nav from './navBar/Nav';
+import MobileNav from './navBar/MobileNav';
 import ModeToggle from '@/components/Themes';
 import UserGrid from './UserGrid';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLoading } from '@/app/loading-context';
+import { useLoading } from '@/lib/loading/loading-context';
 
 const Header = () => {
   const { isLoadingDone } = useLoading();

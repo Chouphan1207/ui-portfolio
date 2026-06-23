@@ -1,16 +1,30 @@
-import { createSlice } from '@reduxjs/toolkit'
+// File Path: redux/slices/modalSlice.ts (or features/modal/model/slice.ts)
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-const initialState = {
-    signUpModalOpen: false,
-    signInModalOpen: false,
-    commentModalOpen: false,
-    commentPostDetails: {
-        name: "",
-        username: "",
-        id: "",
-        text: "",
-    }
- 
+interface CommentPostDetails {
+  name: string
+  username: string
+  id: string
+  text: string
+}
+
+interface ModalState {
+  signUpModalOpen: boolean
+  signInModalOpen: boolean
+  commentModalOpen: boolean
+  commentPostDetails: CommentPostDetails
+}
+
+const initialState: ModalState = {
+  signUpModalOpen: false,
+  signInModalOpen: false,
+  commentModalOpen: false,
+  commentPostDetails: {
+    name: "",
+    username: "",
+    id: "",
+    text: "",
+  }
 }
 
 const modalSlice = createSlice({
@@ -18,40 +32,38 @@ const modalSlice = createSlice({
   initialState,
   reducers: {
     openSignUpModal: (state) => {
-        state.signUpModalOpen = true
+      state.signUpModalOpen = true
     },
     closeSignUpModal: (state) => {
-        state.signUpModalOpen = false
+      state.signUpModalOpen = false
     },
     openSignInModal: (state) => {
-        state.signInModalOpen = true
+      state.signInModalOpen = true
     },
     closeSignInModal: (state) => {
-        state.signInModalOpen = false
+      state.signInModalOpen = false
     },
     openCommentModal: (state) => {
-        state.commentModalOpen = true
+      state.commentModalOpen = true
     },
     closeCommentModal: (state) => {
-        state.commentModalOpen = false
+      state.commentModalOpen = false
     },
-    setCommentDetails: (state, action) => {
-        state.commentPostDetails.name = action.payload.name
-        state.commentPostDetails.username = action.payload.username
-        state.commentPostDetails.id = action.payload.id
-        state.commentPostDetails.text = action.payload.text
+    setCommentDetails: (state, action: PayloadAction<CommentPostDetails>) => {
+      // Direct assignment thanks to Immer integration in RTK
+      state.commentPostDetails = action.payload
     }
   },
 });
 
-export const { 
-    openSignUpModal, 
-    closeSignUpModal, 
-    openSignInModal, 
-    closeSignInModal, 
-    openCommentModal, 
-    closeCommentModal,
-    setCommentDetails,
+export const {
+  openSignUpModal,
+  closeSignUpModal,
+  openSignInModal,
+  closeSignInModal,
+  openCommentModal,
+  closeCommentModal,
+  setCommentDetails,
 } = modalSlice.actions
 
 export default modalSlice.reducer;

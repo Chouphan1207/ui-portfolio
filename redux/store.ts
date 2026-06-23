@@ -1,18 +1,25 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
 import modalSlice from './slices/modalSlice'
 import userSlice from './slices/userSlice'
+
 export const store = configureStore({
   reducer: {
     modals: modalSlice,
     user: userSlice
   },
+  // Ensure middleware is configured standardly for runtime stability
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
+// Infer core types from the store runtime
 export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch
+
+// Pre-typed custom hooks for elegant, type-safe state access across your UI
+export const useAppDispatch = () => useDispatch<AppDispatch>()
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 
 setupListeners(store.dispatch)

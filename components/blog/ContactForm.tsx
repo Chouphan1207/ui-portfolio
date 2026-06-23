@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { auth } from "@/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
-import { Input } from "./ui/Input";
-import { Label } from "./ui/Label";
-import { Textarea } from "./ui/TextArea";
+import { Input } from "../../shared/ui/Input";
+import { Label } from "../../shared/ui/Label";
+import { Textarea } from "../../shared/ui/TextArea";
 import { cn } from "@/lib/utils";
 import {
   IconBrandGithub,

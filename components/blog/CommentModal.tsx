@@ -3,10 +3,9 @@
 import { closeCommentModal } from '@/redux/slices/modalSlice'
 import { RootState } from '@/redux/store'
 import { Modal } from '@mui/material'
-import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { PostHeader } from '../Post'
-import PostInput from '../PostInput'
+import { PostHeader } from './Post'
+import PostInput from './PostInput'
 import { FaXmark } from 'react-icons/fa6'
 
 export default function CommentModal() {
@@ -21,7 +20,7 @@ export default function CommentModal() {
         onClose={() => dispatch(closeCommentModal())}
         >
             <div className='w-full h-full sm:w-[600px] sm:h-fit bg-primary sm:rounded-xl outline-none relative'>
-            <FaXmark 
+            <FaXmark
             className='mt-7 ms-8 cursor-pointer text-black'
             onClick={() => dispatch(closeCommentModal())}/>
             <div className='pt-10 sm:pt-5 pb-10 px-0 sm:px-5 flex flex-col space-y-5'>

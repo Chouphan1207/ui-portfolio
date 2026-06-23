@@ -1,11 +1,14 @@
-
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "./provider";
-import { LoadingProvider } from "./loading-context";
+import "./globals.css"; // Kept locally in app layer for global styling
+
+// FSD Shared Layer Imports
+import { ThemeProvider } from "@/shared/ui/theme-provider";
+import { LoadingProvider } from "@/lib/loading/loading-context";
 import StoreProvider from "@/redux/StoreProvider";
-import ClientLayoutContent from "./clientLayout";
+
+// FSD App Layer Core Layout Composition
+import ClientLayoutContent from "@/lib/loading/clientLayout";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -24,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${spaceGrotesk.variable} antialiased`}>
         <ThemeProvider
           attribute="class"

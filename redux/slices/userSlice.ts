@@ -1,33 +1,32 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { sign } from 'crypto';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-const initialState = {
-    name: "",
-    username: "",
-    email: "",
-    uid: "",
+interface UserState {
+  name: string
+  username: string
+  email: string
+  uid: string
 }
 
+const initialState: UserState = {
+  name: "",
+  username: "",
+  email: "",
+  uid: "",
+}
 
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    signInUser: (state, action) => {
-        state.name = action.payload.name
-        state.username = action.payload.username
-        state.email = action.payload.email
-        state.uid = action.payload.uid
+    signInUser: (state, action: PayloadAction<UserState>) => {
+      return action.payload
     },
-    signOutUser: (state) => {
-        state.name = ""
-        state.username = ""
-        state.email = ""
-        state.uid = ""
-        } 
-}
+    signOutUser: () => {
+      return initialState
+    }
+  }
 });
 
-export const {signInUser, signOutUser} = userSlice.actions
+export const { signInUser, signOutUser } = userSlice.actions
 
-export default userSlice.reducer
+export default userSlice.reducer;

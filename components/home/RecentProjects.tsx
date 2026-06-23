@@ -1,5 +1,5 @@
 import React from "react";
-import { Timeline } from "@/components/ui/Timeline";
+import { Timeline } from "@/components/home/Timeline";
 import "keen-slider/keen-slider.min.css"
 
 

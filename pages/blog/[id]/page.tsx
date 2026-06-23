@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import React from 'react'
-import Widgets from '../Widgets'
-import SignUpPrompt from '../SignUpPrompt'
+import Widgets from '../../../components/blog/Widgets'
+import SignUpPrompt from '../../../components/blog/SignUpPrompt'
 import { FaArrowLeft, FaChartSimple, FaEllipsis } from 'react-icons/fa6'
 import Link from 'next/link'
 import Image from 'next/image'
 import { IoChatbubbleEllipsesSharp, IoHeart, IoShare } from 'react-icons/io5'
-import { PostHeader } from '../Post'
+import { PostHeader } from '../../../components/blog/Post'
 import { getDoc, doc } from 'firebase/firestore'
 import { db } from '@/firebase'
 
@@ -117,7 +117,7 @@ function Comment({ name, username, text }: CommentProps) {
         <IoHeart className='w-[22px] h-[22px] cursor-pointer hover:text-[#63c7f5] transition' />
         <FaChartSimple className='w-[22px] h-[22px] cursor-not-allowed' />
         <IoShare className='w-[22px] h-[22px] cursor-not-allowed' />
-      </div> 
+      </div>
     </div>
   )
 }

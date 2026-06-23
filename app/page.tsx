@@ -1,19 +1,15 @@
-'use client'
-import Grid from "@/components/Grid"
-import Hero from "@/components/Hero"
-import RecentProjects from '@/components/RecentProjects'
-import { ThemeProvider } from '@/components/ui/ThemeProvider'
+import Hero from "@/components/home/Hero"
+import Grid from "@/components/home/grid/Grid"
+import RecentProjects from '@/components/home/RecentProjects'
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col overflow-hidden w-full">
-      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-        <div className="mt-20 px-1">
-          <Hero />
-          <Grid />
-          <RecentProjects />
-        </div>
-      </ThemeProvider>
+    <main className="relative flex flex-col overflow-hidden w-full px-1">
+      <div className="mt-20">
+        <Hero />
+        <Grid />
+        <RecentProjects />
+      </div>
     </main>
   )
 }

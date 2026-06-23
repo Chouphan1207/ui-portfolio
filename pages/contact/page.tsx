@@ -1,6 +1,6 @@
 import React from 'react';
-import { ContactForm } from '@/components/ContactForm';
-import { Spotlight } from '@/components/ui/Spotlight';
+import { ContactForm } from '@/components/blog/ContactForm';
+import { Spotlight } from '@/components/home/Spotlight';
 
 const ContactPage = () => {
   return (
