@@ -32,10 +32,10 @@ export default function SignUpModal() {
         });
         dispatch(signInUser(
           {
-            name: userCredentials.user.displayName,
-            username: userCredentials.user.email!.split('@')[0],
-            email: userCredentials.user.email,
-            uid: userCredentials.user.uid,
+                name: userCredentials.user.displayName ?? 'Guest',
+                username: (userCredentials.user.email ?? 'guest').split('@')[0],
+                email: userCredentials.user.email ?? 'guest@gmail.com',
+                uid: userCredentials.user.uid,
           }))
       }
 
@@ -46,7 +46,7 @@ export default function SignUpModal() {
       useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             if (!currentUser) return
-            
+
             // Handle Redux Action
             dispatch(signInUser(
               {
@@ -58,12 +58,12 @@ export default function SignUpModal() {
           ))
             console.log('User is signed in:', currentUser);
           }
-        ); 
+        );
         return unsubscribe
       }, [])
     return (
     <>
-    <button 
+    <button
     className="w-full h-[48px] md:w-[80px] md:h-[40px] bg-[var(--background)]/90 text-[var(--foreground)] rounded-3xl font-bold transition-transform duration-300 ease-in-out hover:bg-opacity-80 hover:scale-105 outline-none"
     onClick={() => dispatch(openSignUpModal())}
     >
@@ -82,35 +82,35 @@ export default function SignUpModal() {
             <div className='pt-10 pb-20 px-4 sm:px-20'>
             <h1 className='text-3xl font-bold mb-10'>Create your account</h1>
             <div className='w-full space-y-5 mb-10'>
-                <input 
-                type="text" 
+                <input
+                type="text"
                 className='w-full h-[54px] border border-gray-200 outline-none pl-3 rounded-[4px]  transition focus:border-[var(--foreground)]'
                 placeholder='Name'
                 onChange={(event) => setName(event.target.value)}
                 value={name}
                 />
-                <input 
-                type="text" 
+                <input
+                type="text"
                 className='w-full h-[54px] border border-gray-200 outline-none pl-3 rounded-[4px]  transition focus:border-[var(--foreground)]'
                 placeholder='Email'
                 onChange={(event) => setEmail(event.target.value)}
                 value={email}
                 />
                 <div className='w-full h-[54px] border border-gray-200 outline-none rounded-[4px]  transition focus-within:border-[var(--foreground)] flex items-center overflow-hidden pr-3'>
-                    <input 
+                    <input
                     className='w-full h-full ps-3 outline-none'
-                    type={showPassword ? 'text' : 'password'} 
+                    type={showPassword ? 'text' : 'password'}
                     placeholder='Password'
                     onChange={(event) => setPassword(event.target.value)}
                     value={password}
                     />
                     <div
-                    onClick={() => setShowPassword(!showPassword)} 
+                    onClick={() => setShowPassword(!showPassword)}
                     className='w-5 h-5 tdext-gray-400 cursor-pointer'>
                         {showPassword ? <FaEyeSlash/> : <FaEye/>}
                     </div>
-                </div>   
-            </div> 
+                </div>
+            </div>
             <button
                 className='bg-[var(--foreground)] text-[var(--background)] w-full h-[48px] rounded-full font-bold hover:bg-opacity-25 transition'
                 onClick={() => handleSignUp()}>
@@ -121,9 +121,9 @@ export default function SignUpModal() {
                 className='bg-[var(--foreground)] text-[var(--background)] w-full h-[48px] rounded-full font-bold hover:bg-opacity-25 transition' onClick={handleGuestLogIn}>
                 Log In as Guest
             </button>
-            </div>   
+            </div>
         </div>
-    </Modal>   
+    </Modal>
     </>
   )
 }
