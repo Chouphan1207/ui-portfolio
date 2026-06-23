@@ -2,10 +2,16 @@
 import Lottie from "lottie-react";
 
 interface LottieClientProps {
-  animationData: any; // lottie-react uses animationData instead of 'options'
+  animationData: any;
+  height?: number;
+  width?: number;
   className?: string;
 }
 
-export default function LottieClient({ animationData, className }: LottieClientProps) {
-  return <Lottie animationData={animationData} className={className} />;
+export default function LottieClient({ animationData, height, width, className }: LottieClientProps) {
+  return (
+    <div style={{ height, width }}>
+      <Lottie animationData={animationData} className={className} />
+    </div>
+  );
 }

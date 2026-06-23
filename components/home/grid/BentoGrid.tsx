@@ -175,7 +175,7 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="mt-5 relative">
               <div className="absolute -bottom-5 right-0">
-              <LottieClient options={defaultOptions} height={200} width={400} />
+                <LottieClient animationData={defaultOptions} height={200} width={400} />
               </div>
               <MagicButton
                 title={copied ? "Email is Copied!" : "Copy my email address"}
