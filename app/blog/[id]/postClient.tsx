@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowLeft, FaChartSimple, FaEllipsis } from 'react-icons/fa6';
@@ -14,8 +14,8 @@ export function PostClient({ initialPost }: { initialPost: any }) {
   const post = initialPost;
 
   return (
-    <div className='min-h-screen text-primary max-w-[1400px] mx-auto flex pt-25 justify-center'>
-      <div className='flex-grow max-w-2xl border-x border-gray-300'>
+    <div className='min-h-screen text-primary max-w-350 mx-auto flex pt-25 justify-center'>
+      <div className='grow max-w-2xl border-x border-gray-300'>
         <div className='py-4 px-3 text-xl sm:text-3xl font-bold flex items-center sticky top-0 border-b border-gray-300 bg-background/80 backdrop-blur-md'>
           <Link href="/blog"><FaArrowLeft className='w-5 h-5 mr-10' /></Link>
           Profile
@@ -40,10 +40,10 @@ export function PostClient({ initialPost }: { initialPost: any }) {
         </div>
 
         <div className='border-b border-gray-300 p-3 justify-evenly flex'>
-          <IoChatbubbleEllipsesSharp className='w-[22px] h-[22px] cursor-pointer' />
-          <IoHeart className='w-[22px] h-[22px] cursor-pointer' />
-          <FaChartSimple className='w-[22px] h-[22px] cursor-not-allowed' />
-          <IoShare className='w-[22px] h-[22px] cursor-not-allowed' />
+          <IoChatbubbleEllipsesSharp className='w-5.5 h-5.5 cursor-pointer' />
+          <IoHeart className='w-5.5 h-5.5 cursor-pointer' />
+          <FaChartSimple className='w-5.5 h-5.5 cursor-not-allowed' />
+          <IoShare className='w-5.5 h-5.5 cursor-not-allowed' />
         </div>
 
         {post?.comments?.map((comment: Comment, index: number) => (

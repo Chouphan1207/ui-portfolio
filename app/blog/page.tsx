@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
@@ -30,7 +29,7 @@ const Blogpage = () => {
 
         <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-x-hidden z-10">
           {/* Main Hero Header Title */}
-          <p className="absolute top-[360px] mx-auto max-w-sm font-bold -translate-y-3/4 lg:ml-10 text-center text-7xl font-sans">
+          <p className="absolute top-90 mx-auto max-w-sm font-bold -translate-y-3/4 lg:ml-10 text-center text-7xl font-sans">
             Welcome to my Blog
           </p>
 

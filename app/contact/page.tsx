@@ -30,8 +30,8 @@ const ContactPage = () => {
             className="absolute top-0 left-2 w-full h-full object-cover rounded-xl"
           />
           <div className="absolute top-[35%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="w-8 h-8 bg-[var(--ring)] rounded-full shadow-md animate-ping" />
-            <div className="w-4 h-4 bg-[var(--accent)] border-b-4 border-blue-950 rounded-full absolute top-2 left-2" />
+            <div className="w-8 h-8 bg-[--ring] rounded-full shadow-md animate-ping" />
+            <div className="w-4 h-4 bg-[--accent] border-b-4 border-blue-950 rounded-full absolute top-2 left-2" />
           </div>
         </div>
         <div className="w-100 p-8 md:p-0 z-20">
