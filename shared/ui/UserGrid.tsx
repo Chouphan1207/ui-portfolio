@@ -5,10 +5,10 @@ import { signOut } from 'firebase/auth'
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { signOutUser } from '@/redux/slices/userSlice'
+import { signOutUser } from '@/shared/state/userSlice'
 import SignInModal from '@/components/blog/SignInModal'
-import { AppDispatch, RootState } from '@/redux/store'
-import { closeSignInModal, closeSignUpModal } from '@/redux/slices/modalSlice'
+import { AppDispatch, RootState } from '@/shared/state'
+import { closeSignInModal, closeSignUpModal } from '@/shared/state/uiSlice'
 import { useRouter } from 'next/navigation'
 
 const UserGrid = () => {

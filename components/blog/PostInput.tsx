@@ -8,11 +8,11 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { addDoc, arrayUnion, collection, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
-import { closeCommentModal, openSignInModal } from '@/redux/slices/modalSlice';
+import { RootState } from '@/shared/state';
+import { closeCommentModal, openSignInModal } from '@/shared/state/uiSlice';
 
 interface PostInputProps {
-        insideModal?: boolean 
+        insideModal?: boolean
 }
 
 export default function PostInput({insideModal}: PostInputProps) {
@@ -49,7 +49,7 @@ export default function PostInput({insideModal}: PostInputProps) {
                 setText('')
                 dispatch(closeCommentModal())
         }
-        
+
     return (
         <div className='flex space-x-5 px-3'>
                 <Image
@@ -76,12 +76,12 @@ export default function PostInput({insideModal}: PostInputProps) {
                                 </div>
                                 <div className='flex space-x-1.5, select-all content-center'>
                                 </div>
-                                <button type="button" 
+                                <button type="button"
                                 onClick={() => insideModal ? sendComment() : sendPost()}
                                 disabled={!text}
                                 className='bg-secondary text-secondary px-4 py-2 rounded-lg hover:bg-cyan-600 disabled:bg-opacity-60'>Post</button>
                         </div>
-                </div>        
+                </div>
         </div>
     )
 }

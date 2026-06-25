@@ -5,7 +5,7 @@ import "./globals.css"; // Kept locally in app layer for global styling
 // FSD Shared Layer Imports
 import { ThemeProvider } from "@/shared/ui/theme-provider";
 import { LoadingProvider } from "@/lib/loading/loading-context";
-import StoreProvider from "@/redux/StoreProvider";
+import StoreProvider from "@/shared/state/provider";
 
 // FSD App Layer Core Layout Composition
 import ClientLayoutContent from "@/lib/loading/clientLayout";

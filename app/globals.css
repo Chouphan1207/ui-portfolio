@@ -17,75 +17,127 @@
     50% { opacity: 1; }
   }
 }
-/* Font Setup */
+
+/* Font & Color Design Token Setup */
 :root {
   --font-sans: 'Space Grotesk', sans-serif;
   font-family: var(--font-sans);
 
-  --radius: 0.625rem;
+  --radius: 0.75rem;
 
-  --background: #edf1ff;
-  --foreground: #0d111b;
+  /* --- LIGHT MODE (Soft Ice-Blue & Sleek Slate) --- */
+  --background: #f4f7fe;             /* Balanced, clean tinted background */
+  --foreground: #0f172a;             /* Deep slate for crisp text legibility */
 
-  --card: #f3f5fc;
-  --card-foreground: #03001C;
+  --card: #ffffff;                   /* Clear white cards to lift off the soft canvas */
+  --card-foreground: #1e293b;
 
   --popover: #ffffff;
-  --popover-foreground: #03001C;
+  --popover-foreground: #1e293b;
 
-  --primary: #89cbfa;
+  --primary: #3b82f6;                /* Confident, clear modern brand blue */
   --primary-foreground: #ffffff;
 
-  --secondary: #63c7f5;
-  --secondary-foreground: #364080;
+  --secondary: #60a5fa;              /* Mid-tone accent blue */
+  --secondary-foreground: #475569;   /* Balanced description text tone */
 
-  --muted: #e4ebf7;
-  --muted-foreground: #6b7a99;
+  --muted: #e2e8f0;
+  --muted-foreground: #64748b;
 
-  --accent: #63c7f5;
-  --accent-foreground: #1a1a33;
+  --accent: #38bdf8;                 /* Bright highlights */
+  --accent-foreground: #0f172a;
 
-  --destructive: #ff5c5c;
-  --border: #d8dce9;
-  --input: #d8dce9;
-  --ring: #579edc;
+  --destructive: #ef4444;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #3b82f6;
 
-  --title: #579edc;
-  --description: #10003e;
-  --grid: #e1ecfe;
+  /* Text & Grid Helpers */
+  --title: #1e3a8a;                  /* Strong, harmonious deep corporate blue */
+  --description: #475569;            /* Readable muted description slate */
+  --grid: #e2e8f0;                   /* Subtle, clean grid lines */
 }
 
 .dark {
-  --background: #0d111b;
-  --foreground: #edf1ff;
+  /* --- DARK MODE (Obsidian & Cyberspace Glow) --- */
+  --background: #0b0f19;             /* Premium dark slate/black canvas */
+  --foreground: #f1f5f9;             /* Soft off-white to eliminate eye strain */
 
-  --card: #1a1f2e;
-  --card-foreground: #edf1ff;
+  --card: #131a2c;                   /* Elevated, beautiful dark card layer */
+  --card-foreground: #f1f5f9;
 
-  --popover: #202535;
-  --popover-foreground: #edf1ff;
+  --popover: #1e293b;
+  --popover-foreground: #f1f5f9;
 
-  --primary: #0d2a39;
-  --primary-foreground: #11131f;
+  --primary: #1d4ed8;                /* Vibrant modern neon tech blue */
+  --primary-foreground: #ffffff;
 
-  --secondary: #404b66;
-  --secondary-foreground: #edf1ff;
+  --secondary: #38bdf8;              /* Soft sky highlight text */
+  --secondary-foreground: #94a3b8;   /* Clean secondary reading slate */
 
-  --muted: #404b66;
-  --muted-foreground: #9cb1d9;
+  --muted: #1e293b;
+  --muted-foreground: #64748b;
 
-  --accent: #63c7f5;
-  --accent-foreground: #edf1ff;
+  --accent: #0ea5e9;
+  --accent-foreground: #0b0f19;
 
-  --destructive: #ff4d4f;
-  --border: rgba(255, 255, 255, 0.12);
-  --input: rgba(255, 255, 255, 0.16);
-  --ring: #4d9fe2;
+  --destructive: #f87171;
+  --border: rgba(255, 255, 255, 0.08); /* Clean modern translucent grid lines */
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: #38bdf8;
 
-  --title: #B7E0FF;
-  --description: #e8fdfc;
+  /* Text & Grid Helpers */
+  --title: #38bdf8;                  /* Glowing ice-blue for hero and titles */
+  --description: #94a3b8;            /* Sleek readability slate */
+  --grid: rgba(255, 255, 255, 0.03);  /* Whispering dark-grid line markers */
+}
 
-  --grid: #0e0f11;
+/* --- Functional Class Utility Mapping --- */
+.text-title {
+  color: var(--title);
+}
+
+.text-description {
+  color: var(--description);
+}
+
+.text-primary {
+  color: var(--foreground);
+}
+
+.text-secondary {
+  color: var(--secondary-foreground);
+}
+
+.text-card {
+  color: var(--card-foreground);
+}
+
+.bg-primary {
+  background-color: var(--background);
+}
+
+.bg-secondary {
+  background-color: var(--card);
+}
+
+.card {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.popover {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+}
+
+/* Background Grid Generator Layer */
+.bg-grid {
+  background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px),
+                    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 4rem 4rem;
 }
 
 .text-title {

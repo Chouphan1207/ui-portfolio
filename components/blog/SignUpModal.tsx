@@ -3,13 +3,13 @@
 import React, { useEffect, useState } from 'react'
 import { Modal } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
-import { AppDispatch, RootState } from '@/redux/store'
-import { openSignUpModal, closeSignUpModal } from '@/redux/slices/modalSlice'
+import { AppDispatch, RootState } from '@/shared/state'
+import { openSignUpModal, closeSignUpModal } from '@/shared/state/uiSlice'
 import { FaEyeSlash, FaXmark } from 'react-icons/fa6'
 import { FaEye } from 'react-icons/fa'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { auth } from '@/firebase'
-import { signInUser } from '@/redux/slices/userSlice'
+import { signInUser } from '@/shared/state/userSlice'
 
 
 export default function SignUpModal() {

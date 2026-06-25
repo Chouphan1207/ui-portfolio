@@ -7,10 +7,10 @@ import { FaChartSimple } from "react-icons/fa6";
 import { arrayRemove, arrayUnion, doc, DocumentData, Timestamp, updateDoc } from 'firebase/firestore';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { openCommentModal, openSignInModal, setCommentDetails } from '@/redux/slices/modalSlice';
+import { openCommentModal, openSignInModal, setCommentDetails } from '@/shared/state/uiSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
-import { RootState } from '@/redux/store';
+import { RootState } from '@/shared/state';
 import { db } from '@/firebase';
 
 dayjs.extend(relativeTime);
@@ -78,7 +78,7 @@ export default function Post({ data, id }: PostProps) {
             }}
           />
           {
-            data.comments.length > 0 && 
+            data.comments.length > 0 &&
             <span className='absolute text-xs top-1 -right-3'>
             {data.comments.length}
             </span>

@@ -1,15 +1,46 @@
+import Image from "next/image"
 import Hero from "@/components/home/Hero"
 import Grid from "@/components/home/grid/Grid"
 import RecentProjects from '@/components/home/RecentProjects'
+import WavyBackground from "@/components/home/WavyBackground"
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col overflow-hidden w-full px-1">
-      <div className="mt-20">
-        <Hero />
+    <main className="relative flex flex-col min-h-screen overflow-x-hidden w-full px-1 bg-background">
+
+      {/* 1. BACKGROUND CONTAINER LAYER */}
+      <div className="absolute top-0 left-0 right-0 h-screen lg:h-screen pointer-events-none select-none z-0 overflow-hidden">
+        <Image
+          src="/hero-bg.jpeg"
+          alt="Hero Background"
+          fill
+          priority
+          quality={100}
+          className="object-cover object-center scale-105"
+        />
+
+        {/* Ambient Dark Overlay Tint */}
+        <div className="absolute inset-0 bg-background/50 backdrop-blur-[5px] dark:bg-black/60 z-10" />
+
+        {/* THE ULTIMATE FIX: Native CSS Gradient Mask */}
+        {/* This overrides utility parsing bugs by pulling your exact theme variable natively */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-80 z-20"
+          style={{
+            background: `linear-gradient(to top, var(--background) 0%, rgba(11, 15, 25, 0.8) 40%, transparent 100%)`
+          }}
+        />
+      </div>
+
+      {/* 2. FOREGROUND CONTENT LAYER */}
+      <div className="relative z-30 w-full flex flex-col items-center mt-10">
+        <div className="w-full max-w-7xl">
+          <Hero />
+        </div>
         <Grid />
         <RecentProjects />
       </div>
+
     </main>
   )
 }

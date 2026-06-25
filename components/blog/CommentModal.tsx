@@ -1,7 +1,7 @@
 'use client'
 
-import { closeCommentModal } from '@/redux/slices/modalSlice'
-import { RootState } from '@/redux/store'
+import { closeCommentModal } from '@/shared/state/uiSlice'
+import { RootState } from '@/shared/state'
 import { Modal } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { PostHeader } from './Post'
