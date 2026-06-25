@@ -53,7 +53,7 @@ const Blogpage = () => {
           ))}
 
           {/* Active Feed Timelines */}
-          <div className='min-h-screen w-full text-primary max-w-7xl mx-auto flex pt-[600px] pb-20 justify-center gap-8 px-4'>
+          <div className='min-h-screen w-full text-primary max-w-7xl mx-auto flex pt-150 pb-20 justify-center gap-8 px-4'>
             <PostFeed />
             <Widgets />
           </div>

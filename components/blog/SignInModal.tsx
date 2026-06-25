@@ -65,7 +65,7 @@ export default function SignInModal() {
             <div className="w-full space-y-5 mb-10">
               <input
                 type="email"
-                className="w-full h-[54px] border border-gray-200 outline-none pl-3 rounded-sm transition focus:border-[--foreground]"
+                className="w-full h-13.5 border border-gray-200 outline-none pl-3 rounded-sm transition focus:border-[--foreground]"
                 placeholder="Email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}

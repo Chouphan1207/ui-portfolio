@@ -64,7 +64,7 @@ export default function SignUpModal() {
     return (
     <>
     <button
-    className="w-full h-[48px] md:w-[80px] md:h-[40px] bg-[var(--background)]/90 text-[var(--foreground)] rounded-3xl font-bold transition-transform duration-300 ease-in-out hover:bg-opacity-80 hover:scale-105 outline-none"
+    className="w-full h-12 md:w-20 md:h-10 bg-[--background]/90 text-[--foreground] rounded-3xl font-bold transition-transform duration-300 ease-in-out hover:bg-opacity-80 hover:scale-105 outline-none"
     onClick={() => dispatch(openSignUpModal())}
     >
         Sign Up
@@ -76,7 +76,7 @@ export default function SignUpModal() {
         aria-describedby="modal-modal-description"
         className='flex items-center justify-center'
     >
-        <div className='mt-40 sm:mt-0 w-full h-full sm:w-[600px] sm:h-fit bg-[var(--background)] shadow-xl sm:rounded-xl'>
+        <div className='mt-40 sm:mt-0 w-full h-full sm:w-150 sm:h-fit bg-[--background] shadow-xl sm:rounded-xl'>
             <FaXmark className='w-7 mt-5 ms-5 sm:px-20'
             onClick={() => dispatch(closeSignUpModal())}/>
             <div className='pt-10 pb-20 px-4 sm:px-20'>
@@ -84,19 +84,19 @@ export default function SignUpModal() {
             <div className='w-full space-y-5 mb-10'>
                 <input
                 type="text"
-                className='w-full h-[54px] border border-gray-200 outline-none pl-3 rounded-[4px]  transition focus:border-[var(--foreground)]'
+                className='w-full h-13.5 border border-gray-200 outline-none pl-3 rounded-sm  transition focus:border-[--foreground]'
                 placeholder='Name'
                 onChange={(event) => setName(event.target.value)}
                 value={name}
                 />
                 <input
                 type="text"
-                className='w-full h-[54px] border border-gray-200 outline-none pl-3 rounded-[4px]  transition focus:border-[var(--foreground)]'
+                className='w-full h-13.5 border border-gray-200 outline-none pl-3 rounded-sm  transition focus:border-[--foreground]'
                 placeholder='Email'
                 onChange={(event) => setEmail(event.target.value)}
                 value={email}
                 />
-                <div className='w-full h-[54px] border border-gray-200 outline-none rounded-[4px]  transition focus-within:border-[var(--foreground)] flex items-center overflow-hidden pr-3'>
+                <div className='w-full h-13.5 border border-gray-200 outline-none rounded-sm  transition focus-within:border-[--foreground] flex items-center overflow-hidden pr-3'>
                     <input
                     className='w-full h-full ps-3 outline-none'
                     type={showPassword ? 'text' : 'password'}
@@ -112,13 +112,13 @@ export default function SignUpModal() {
                 </div>
             </div>
             <button
-                className='bg-[var(--foreground)] text-[var(--background)] w-full h-[48px] rounded-full font-bold hover:bg-opacity-25 transition'
+                className='bg-[--foreground] text-[--background] w-full h-12 rounded-full font-bold hover:bg-opacity-25 transition'
                 onClick={() => handleSignUp()}>
                 Sign Up
             </button>
             <span className='my-3 text-sm text-center block'>Or</span>
             <button
-                className='bg-[var(--foreground)] text-[var(--background)] w-full h-[48px] rounded-full font-bold hover:bg-opacity-25 transition' onClick={handleGuestLogIn}>
+                className='bg-[--foreground] text-[--background] w-full h-12 rounded-full font-bold hover:bg-opacity-25 transition' onClick={handleGuestLogIn}>
                 Log In as Guest
             </button>
             </div>

@@ -23,7 +23,7 @@ const ContactPage = () => {
 
       <div className="flex flex-col md:flex-row justify-center items-center relative">
         {/* Map Section */}
-        <div className="hidden lg:block relative w-190 h-[650px] overflow-hidden py-5 z-0 animate-slide-left">
+        <div className="hidden lg:block relative w-190 h-162.5 overflow-hidden py-5 z-0 animate-slide-left">
           <img
             src="/maplg.png"
             alt="World map"
