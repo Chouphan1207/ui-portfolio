@@ -10,7 +10,7 @@ export default function Home() {
       {/* 1. BACKGROUND CONTAINER LAYER */}
       <div className="absolute top-0 left-0 right-0 h-screen lg:h-screen pointer-events-none select-none z-0 overflow-hidden">
         <Image
-          src="/hero-bg.jpeg"
+          src="/hero-bg.JPEG"
           alt="Hero Background"
           fill
           priority
