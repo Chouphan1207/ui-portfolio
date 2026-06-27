@@ -10,7 +10,7 @@ import PostFeed from '@/components/blog/PostFeed'
 import Widgets from '@/components/blog/Widgets'
 import SignUpPrompt from '@/components/blog/SignUpPrompt'
 import CommentModal from '@/components/blog/CommentModal'
-import { Spotlight } from '@/components/home/Spotlight'
+import { Spotlight } from '@/components/home/background/Spotlight'
 
 const Blogpage = () => {
   return (

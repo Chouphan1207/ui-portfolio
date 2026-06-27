@@ -48,7 +48,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       {/* Main Timeline Stream Container */}
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20 space-y-12">
         {data.map((item) => (
-          /* ✨ FIX: Changed from flex flex-col md:flex-row to a structured grid layout */
           <div key={item.title} className="grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr] gap-4 pt-10 md:pt-16 first:pt-0">
 
             {/* Left Column - Interactive Dot & Sticky Timestamp */}
@@ -64,7 +63,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             {/* Right Column - Dynamic Card Canvas */}
-            <div className="relative pl-16 pr-4 md:pl-0 w-full">
+            <div className="relative pr-4 md:pl-0 w-full">
               {/* Mobile Only Floating Timestamp Title */}
               <h3 className="md:hidden block text-2xl mb-3 font-bold text-[--ring] text-left">
                 {item.title}

@@ -18,7 +18,6 @@ export function RecentProjects() {
           {project?.description ?? ""}
         </p>
 
-        {/* ✨ FIX: Safely guard the images check with optional chaining */}
         {project?.images && project.images.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
             {project.images.map((img, i) => (
@@ -32,7 +31,6 @@ export function RecentProjects() {
           </div>
         )}
 
-        {/* ✨ FIX: Safely handle the closing branch summary block */}
         {project?.isClosingBranch && (
           <div className="max-w-3xl mt-6 pt-4 border-t border-[--border]/20">
             <p className="text-xl md:text-2xl font-semibold text-accent leading-relaxed tracking-tight bg-linear-to-r from-[--title] via-[--foreground] to-[--muted-foreground] bg-clip-text">

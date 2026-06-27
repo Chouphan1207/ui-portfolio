@@ -4,7 +4,7 @@ import React from 'react'
 import { services } from "../../../components/data";
 import { motion } from "framer-motion";
 import { Link } from 'lucide-react';
-import { BackgroundBeams } from '@/components/home/BackgroundBeam';
+import { BackgroundBeams } from '@/components/home/background/BackgroundBeam';
 
 const Services = () => {
 
