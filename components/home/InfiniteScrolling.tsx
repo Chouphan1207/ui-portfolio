@@ -1,4 +1,3 @@
-import React from "react";
 import { tools } from "../data";
 
 export default function InfiniteScrollTools() {
@@ -13,7 +12,7 @@ export default function InfiniteScrollTools() {
         {[...tools, ...tools].map((tool, index) => (
           <div
             key={index}
-            className="min-w-[200px] h-28 rounded-2xl bg-muted shadow-lg flex flex-col justify-center items-center px-4 py-2 text-center transition-transform duration-300 hover:scale-105 bg-[var(--card)] whitespace-normal"
+            className="min-w-50 h-28 rounded-2xl bg-card shadow-lg flex flex-col justify-center items-center px-4 py-2 text-center transition-transform duration-300 hover:scale-105 whitespace-normal"
           >
             <img src={tool.icon} alt={tool.name} className="h-10 w-10 object-contain mb-2" />
             <p className="text-sm font-semibold text-foreground">{tool.name}</p>

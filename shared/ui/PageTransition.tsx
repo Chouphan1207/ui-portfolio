@@ -32,7 +32,7 @@ export default function PageTransition({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="fixed top-0 left-0 w-full h-full bg-background z-[9999] pointer-events-none"
+            className="fixed top-0 left-0 w-full h-full bg-background z-99 pointer-events-none"
           />
         )}
       </AnimatePresence>
