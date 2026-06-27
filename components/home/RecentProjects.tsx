@@ -20,7 +20,7 @@ export function RecentProjects() {
 
         {/* ✨ FIX: Safely guard the images check with optional chaining */}
         {project?.images && project.images.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
             {project.images.map((img, i) => (
               <img
                 key={i}
