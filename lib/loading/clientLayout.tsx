@@ -3,7 +3,7 @@
 import { ReactNode } from "react";
 import { useLoading } from "./loading-context";
 import Header from "@/shared/ui/navBar/Header";
-import LoadingIntro from "@/shared/ui/LoadingIntro";
+import LoadingIntro from "@/lib/loading/LoadingIntro";
 import PageTransition from "@/shared/ui/PageTransition";
 
 export default function ClientLayoutContent({ children }: { children: ReactNode }) {

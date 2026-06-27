@@ -145,8 +145,7 @@ export const tools = [
   { name: "Java", icon: "/tools/java.png", description: "Foundational OOP Languages" },
 ];
 
-// Organized, scalable dataset ready for loop injection inside your components
-export const TIMELINE_PROJECTS = [
+export const timeline_projects = [
   {
     title: "2019 - 2020",
     heading: "Market Research Assistant — INTAGE Vietnam",
@@ -172,7 +171,7 @@ export const TIMELINE_PROJECTS = [
     title: "2023 - 2026",
     heading: "Mandatory National Military Service",
     description: "Led squads under high-pressure environments while handling combat medic responsibilities. Spearheaded secure administrative documentation control, modernizing old paper logs into efficient, highly secure Excel tracker sheets.",
-    images: ["duty1", "duty2", "duty3", "duty4", "duty5", "medic4", "medic2", "medic1"],
+    images: ["duty2", "duty3", "medic4", "medic2"],
     altText: "Military Service Records"
   },
   {

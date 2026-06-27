@@ -23,7 +23,7 @@ export default function Home() {
 
         {/* This overrides utility parsing bugs by pulling your exact theme variable natively */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-80 z-20 backdrop-blur-[3px]"
+          className="absolute bottom-0 left-0 right-0 h-30 z-20 backdrop-blur-[3px]"
           style={{
             background: `linear-gradient(
               to top,

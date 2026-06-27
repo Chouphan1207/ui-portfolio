@@ -32,7 +32,7 @@ const UserGrid = () => {
 
   if (!user.username) {
     return (
-      <div className="bg-[--muted-foreground] rounded-full w-20 h-12 md:w-20 md:h-10">
+      <div className="bg-background/20 rounded-full w-20 h-12 md:w-20 md:h-10">
         <SignInModal />
       </div>
     )

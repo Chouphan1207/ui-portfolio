@@ -45,7 +45,7 @@ export default function SignInModal() {
   return (
     <>
       <button
-        className="w-full h-12 md:w-20 md:h-10 bg-[--background]/90 text-[--foreground] rounded-3xl font-bold transition-transform duration-300 ease-in-out hover:bg-opacity-80 hover:scale-105 outline-none"
+        className="w-full h-12 md:w-20 md:h-10 text-primary-foreground rounded-3xl font-bold transition-transform duration-700 ease-in-out hover:text-secondary hover:scale-105 outline-none"
         onClick={() => dispatch(openSignInModal())}
       >
         Login
@@ -58,44 +58,68 @@ export default function SignInModal() {
         aria-describedby="modal-modal-description"
         className="flex items-center justify-center"
       >
-        <div className="mt-0 sm:mt-20 w-full h-full sm:w-150 sm:h-fit bg-[--background] shadow-xl sm:rounded-xl">
-          <FaXmark className="w-7 mt-5 ms-5 sm:px-20 cursor-pointer" onClick={() => dispatch(closeSignInModal())} />
-          <div className="pt-10 pb-20 px-4 sm:px-20">
-            <h1 className="text-3xl font-bold mb-10">Login to your account</h1>
-            <div className="w-full space-y-5 mb-10">
+        {/* ✨ FIX: Changed sm:w-150 to max-w-md or max-w-lg for universal layout spacing constraints */}
+        <div className="relative mt-0 sm:mt-20 w-full h-full sm:w-full sm:max-w-lg sm:h-auto bg-background shadow-xl sm:rounded-xl overflow-y-auto">
+
+          {/* ✨ FIX: Cleared sm:px-20 from the SVG element. Positioned it neatly in the top corner instead */}
+          <button
+            onClick={() => dispatch(closeSignInModal())}
+            className="absolute top-5 left-5 text-neutral-500 hover:text-[--foreground] transition-colors outline-none"
+            aria-label="Close modal"
+          >
+            <FaXmark className="w-6 h-6" />
+          </button>
+
+          <div className="pt-16 pb-12 px-6 sm:px-16">
+            <h1 className="text-3xl font-bold mb-8 text-[--foreground]">Login to your account</h1>
+
+            <div className="w-full space-y-4 mb-8">
+              {/* ✨ FIX: Changed h-13.5 to standard h-12 for clean cross-browser input field scaling */}
               <input
                 type="email"
-                className="w-full h-13.5 border border-gray-200 outline-none pl-3 rounded-sm transition focus:border-[--foreground]"
+                className="w-full h-12 border border-gray-200 outline-none pl-3 rounded-md transition focus:border-[--foreground] bg-transparent text-[--foreground]"
                 placeholder="Email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
               />
-              <div className="w-full h-13.5 border border-gray-200 outline-none rounded-sm transition focus-within:border-[--foreground] flex items-center overflow-hidden pr-3">
+
+              <div className="w-full h-12 border border-gray-200 outline-none rounded-md transition focus-within:border-[--foreground] flex items-center overflow-hidden pr-3 bg-transparent">
                 <input
-                  className="w-full h-full ps-3 outline-none"
+                  className="w-full h-full ps-3 outline-none bg-transparent text-[--foreground]"
                   type={showPassword ? 'text' : 'password'}
                   placeholder="Password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                 />
-                <div onClick={() => setShowPassword(!showPassword)} className="w-5 h-5 text-gray-400 cursor-pointer">
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="w-5 h-5 text-gray-400 cursor-pointer hover:text-[--foreground] transition-colors outline-none"
+                >
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
-                </div>
+                </button>
               </div>
             </div>
-            <button
-              className="bg-[--foreground] text-[--background] w-full h-12 rounded-full font-bold transition-all duration-300 ease-in-out transform hover:bg-opacity-25 hover:scale-105 hover:shadow-lg"
-              onClick={() => handleLogin(email, password)}
-            >
-              Login
-            </button>
-            <span className="my-3 text-sm text-center block">Or</span>
-            <button
-              className="bg-[--foreground] text-[--background] w-full h-12 rounded-full font-bold transition-all duration-300 ease-in-out transform hover:bg-opacity-25 hover:scale-105 hover:shadow-lg"
-              onClick={() => handleLogin('Guest@gmail.com', '12345678')}
-            >
-              Log In as Guest
-            </button>
+
+            <div className="space-y-3">
+              <button
+                className="bg-foreground text-background w-full h-12 rounded-full font-bold transition-all duration-300 ease-in-out transform hover:bg-opacity-90 hover:scale-[1.02] hover:shadow-lg"
+                onClick={() => handleLogin(email, password)}
+              >
+                Login
+              </button>
+
+              <div className="flex items-center justify-center my-2">
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">Or</span>
+              </div>
+
+              <button
+                className="border border-gray-200 text-[--foreground] w-full h-12 rounded-full font-bold transition-all duration-300 ease-in-out transform hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:scale-[1.02]"
+                onClick={() => handleLogin('Guest@gmail.com', '12345678')}
+              >
+                Log In as Guest
+              </button>
+            </div>
           </div>
         </div>
       </Modal>

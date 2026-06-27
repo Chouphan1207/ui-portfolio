@@ -1,5 +1,5 @@
 "use client";
-import { useScroll, useTransform, motion } from "framer-motion"; // Adjusted to matching standard framer-motion library bounds
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -12,7 +12,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
-  // Native ResizeObserver tracking prevents infinite rendering lags
   useEffect(() => {
     if (!ref.current) return;
 
@@ -38,7 +37,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     <div className="w-full bg-background font-sans px-4 md:px-10" ref={containerRef}>
       {/* Header Info Block */}
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-title max-w-4xl">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-[--ring] max-w-4xl">
           My Past Journey
         </h2>
         <p className="text-description text-sm md:text-base max-w-md">
@@ -49,27 +48,25 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       {/* Main Timeline Stream Container */}
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20 space-y-12">
         {data.map((item) => (
-          <div key={item.title} className="flex flex-col md:flex-row justify-start pt-10 md:pt-16 first:pt-0">
+          /* ✨ FIX: Changed from flex flex-col md:flex-row to a structured grid layout */
+          <div key={item.title} className="grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr] gap-4 pt-10 md:pt-16 first:pt-0">
 
-            {/* OPTIMIZED: Left Column - Interactive Dot & Sticky Timestamp */}
-            {/* We reduced max-w and padded correctly so text stays perfectly left-anchored */}
-            <div className="sticky flex items-center md:items-start z-40 top-24 self-start w-full md:w-1/4 lg:w-1/5">
+            {/* Left Column - Interactive Dot & Sticky Timestamp */}
+            <div className="sticky flex items-center md:items-start z-40 top-24 self-start w-full">
               {/* Timeline Indicator Dot */}
-              <div className="h-8 w-8 absolute left-3 rounded-full flex items-center justify-center bg-[var(--card)] border border-[var(--border)] shadow-xs dark:border-white/10">
-                <div className="h-3 w-3 rounded-full bg-[--primary] animate-pulse" />
+              <div className="h-8 w-8 absolute left-3 rounded-full flex items-center justify-center bg-primary border border-[--border] shadow-xs dark:border-white/10">
+                <div className="h-3 w-3 rounded-full bg-[--foreground] animate-pulse" />
               </div>
 
-              {/* Desktop Sticky Date Title */}
-              <h3 className="hidden md:block text-2xl lg:text-3xl pl-16 font-extrabold text-[var(--title)] tracking-tight">
+              <h3 className="hidden md:block text-2xl lg:text-3xl pl-16 font-extrabold text-primary tracking-tight">
                 {item.title}
               </h3>
             </div>
 
-            {/* OPTIMIZED: Right Column - Dynamic Card & Picture Layout Canvas */}
-            {/* Removing old md:pl-4 and defining clear flex width pulls everything smoothly to the left */}
-            <div className="relative pl-16 pr-4 md:pl-4 w-full md:flex-1">
+            {/* Right Column - Dynamic Card Canvas */}
+            <div className="relative pl-16 pr-4 md:pl-0 w-full">
               {/* Mobile Only Floating Timestamp Title */}
-              <h3 className="md:hidden block text-2xl mb-3 font-bold text-title text-left">
+              <h3 className="md:hidden block text-2xl mb-3 font-bold text-[--ring] text-left">
                 {item.title}
               </h3>
 
@@ -84,14 +81,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {/* Animated Background Progress Indicator Spine Line */}
         <div
           style={{ height: `${height}px` }}
-          className="absolute left-[27px] top-0 overflow-hidden w-[2px] bg-neutral-200 dark:bg-neutral-800/60"
+          className="absolute left-6.75 top-0 overflow-hidden w-0.5 bg-transparent"
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-full bg-gradient-to-b from-[var(--primary)] via-[var(--secondary)] to-transparent rounded-full"
+            className="absolute inset-x-0 top-0 w-full bg-linear-to-b from-(--primary) via-(--secondary) to-transparent rounded-full"
           />
         </div>
       </div>

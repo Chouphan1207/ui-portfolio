@@ -18,7 +18,7 @@ const Nav = () => {
             "capitalize font-medium transition-all duration-200",
             link.path === pathname
               ? "text-[#33d4ff] border-b-2 border-text-color"
-              : "text-neutral-500 hover:text-[#33d4ff]"
+              : "text-neutral-800 hover:text-[#33d4ff]"
           )}
         >
           {link.name}
