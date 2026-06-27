@@ -2,10 +2,10 @@ import { tools } from "../data";
 
 export default function InfiniteScrollTools() {
   return (
-    <div className="relative overflow-hidden py-8 bg-background">
+    <div className="relative overflow-hidden py-10 bg-transparent">
       {/* Side gradient fades */}
-      <div className="absolute inset-y-0 left-0 w-24 bg-linear-to-r from-background to-transparent z-10" />
-      <div className="absolute inset-y-0 right-0 w-24 bg-linear-to-l from-background to-transparent z-10" />
+      <div className="absolute my-9 inset-y-0 left-0 w-24 bg-linear-to-r from-background to-transparent z-10" />
+      <div className="absolute my-9 inset-y-0 right-0 w-24 bg-linear-to-l from-background to-transparent z-10" />
 
       {/* Infinite scroll row */}
       <div className="flex animate-scroll whitespace-nowrap w-max gap-6">
