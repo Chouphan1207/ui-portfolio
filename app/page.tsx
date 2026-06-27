@@ -2,7 +2,6 @@ import Image from "next/image"
 import Hero from "@/components/home/Hero"
 import Grid from "@/components/home/grid/Grid"
 import RecentProjects from '@/components/home/RecentProjects'
-import WavyBackground from "@/components/home/WavyBackground"
 
 export default function Home() {
   return (
@@ -20,14 +19,20 @@ export default function Home() {
         />
 
         {/* Ambient Dark Overlay Tint */}
-        <div className="absolute inset-0 bg-background/50 backdrop-blur-[5px] dark:bg-black/60 z-10" />
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-[5px] dark:bg-black/50 z-10" />
 
-        {/* THE ULTIMATE FIX: Native CSS Gradient Mask */}
         {/* This overrides utility parsing bugs by pulling your exact theme variable natively */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-80 z-20"
+          className="absolute bottom-0 left-0 right-0 h-80 z-20 backdrop-blur-[3px]"
           style={{
-            background: `linear-gradient(to top, var(--background) 0%, rgba(11, 15, 25, 0.8) 40%, transparent 100%)`
+            background: `linear-gradient(
+              to top,
+              var(--background) 0%,
+              var(--background) 35%,
+              rgba(11, 15, 25, 0.9) 65%,
+              rgba(11, 15, 25, 0.4) 85%,
+              transparent 100%
+            )`
           }}
         />
       </div>

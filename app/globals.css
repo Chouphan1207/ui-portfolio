@@ -2,11 +2,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* Animation Mapping */
+  /* --- Typography --- */
+  --font-sans: 'Space Grotesk', sans-serif;
+
+  /* --- Animation Mapping & Keyframes --- */
   --animate-scroll: scroll 30s linear infinite;
   --animate-spotlight: spotlight 2s ease infinite;
 
-  /* Keyframes */
   @keyframes scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
@@ -16,35 +18,72 @@
     0%, 100% { opacity: 0.5; }
     50% { opacity: 1; }
   }
+
+  /* --- Native Tailwind Utility Engine Mapping --- */
+  /* This automatically generates utility classes like text-title, bg-primary, etc. */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Custom Semantic Additions */
+  --color-title: var(--title);
+  --color-description: var(--description);
+
+  /* Radius config */
+  --radius-xl: 0.75rem;
 }
 
-/* Font & Color Design Token Setup */
+/* Apply Base Styles */
+@layer base {
+  :root {
+    font-family: var(--font-sans);
+  }
+}
+
+/* --- DESIGN TOKENS (Your Exact Original Colors) --- */
 :root {
-  --font-sans: 'Space Grotesk', sans-serif;
-  font-family: var(--font-sans);
-
-  --radius: 0.75rem;
-
   /* --- LIGHT MODE (Soft Ice-Blue & Sleek Slate) --- */
-  --background: #f4f7fe;             /* Balanced, clean tinted background */
-  --foreground: #0f172a;             /* Deep slate for crisp text legibility */
+  --background: #f4f7fe;
+  --foreground: #0f172a;
 
-  --card: #ffffff;                   /* Clear white cards to lift off the soft canvas */
+  --card: #ffffff;
   --card-foreground: #1e293b;
 
   --popover: #ffffff;
   --popover-foreground: #1e293b;
 
-  --primary: #3b82f6;                /* Confident, clear modern brand blue */
+  --primary: #3b82f6;
   --primary-foreground: #ffffff;
 
-  --secondary: #60a5fa;              /* Mid-tone accent blue */
-  --secondary-foreground: #475569;   /* Balanced description text tone */
+  --secondary: #60a5fa;
+  --secondary-foreground: #475569;
 
   --muted: #e2e8f0;
   --muted-foreground: #64748b;
 
-  --accent: #38bdf8;                 /* Bright highlights */
+  --accent: #38bdf8;
   --accent-foreground: #0f172a;
 
   --destructive: #ef4444;
@@ -53,27 +92,27 @@
   --ring: #3b82f6;
 
   /* Text & Grid Helpers */
-  --title: #1e3a8a;                  /* Strong, harmonious deep corporate blue */
-  --description: #475569;            /* Readable muted description slate */
-  --grid: #e2e8f0;                   /* Subtle, clean grid lines */
+  --title: #e2e8f0;
+  --description: #475569;
+  --grid: #e2e8f0;
 }
 
 .dark {
   /* --- DARK MODE (Obsidian & Cyberspace Glow) --- */
-  --background: #0b0f19;             /* Premium dark slate/black canvas */
-  --foreground: #f1f5f9;             /* Soft off-white to eliminate eye strain */
+  --background: #0b0f18;
+  --foreground: #f1f5f9;
 
-  --card: #131a2c;                   /* Elevated, beautiful dark card layer */
+  --card: #131a2c;
   --card-foreground: #f1f5f9;
 
   --popover: #1e293b;
   --popover-foreground: #f1f5f9;
 
-  --primary: #1d4ed8;                /* Vibrant modern neon tech blue */
+  --primary: #1d4ed8;
   --primary-foreground: #ffffff;
 
-  --secondary: #38bdf8;              /* Soft sky highlight text */
-  --secondary-foreground: #94a3b8;   /* Clean secondary reading slate */
+  --secondary: #38bdf8;
+  --secondary-foreground: #94a3b8;
 
   --muted: #1e293b;
   --muted-foreground: #64748b;
@@ -82,106 +121,20 @@
   --accent-foreground: #0b0f19;
 
   --destructive: #f87171;
-  --border: rgba(255, 255, 255, 0.08); /* Clean modern translucent grid lines */
+  --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.12);
   --ring: #38bdf8;
 
   /* Text & Grid Helpers */
-  --title: #38bdf8;                  /* Glowing ice-blue for hero and titles */
-  --description: #94a3b8;            /* Sleek readability slate */
-  --grid: rgba(255, 255, 255, 0.03);  /* Whispering dark-grid line markers */
+  --title: #e2e8f0;
+  --description: #94a3b8;
+  --grid: rgba(255, 255, 255, 0.03);
 }
 
-/* --- Functional Class Utility Mapping --- */
-.text-title {
-  color: var(--title);
-}
-
-.text-description {
-  color: var(--description);
-}
-
-.text-primary {
-  color: var(--foreground);
-}
-
-.text-secondary {
-  color: var(--secondary-foreground);
-}
-
-.text-card {
-  color: var(--card-foreground);
-}
-
-.bg-primary {
-  background-color: var(--background);
-}
-
-.bg-secondary {
-  background-color: var(--card);
-}
-
-.card {
-  background-color: var(--card);
-  color: var(--card-foreground);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-}
-
-.popover {
-  background-color: var(--popover);
-  color: var(--popover-foreground);
-}
-
-/* Background Grid Generator Layer */
+/* --- Complex Layout Utilities --- */
+/* Kept separate because it creates a complex structural CSS rule */
 .bg-grid {
   background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px),
                     linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
   background-size: 4rem 4rem;
 }
-
-.text-title {
-  color: var(--title)
-}
-
-.text-description {
-  color: var(--description)
-}
-
-.text-primary {
-  color: var(--foreground);
-}
-
-.text-secondary {
-  color: var(--secondary);
-}
-
-.text-card {
-  color: var(--grid);
-}
-.bg-primary {
-  background-color: var(--background);
-}
-.bg-secondary {
-  background-color: var(--foreground);
-}
-
-.card {
-  background-color: var(--card);
-  color: var(--card-foreground);
-  border-radius: var(--radius);
-}
-
-.popover {
-  background-color: var(--popover);
-  color: var(--popover-foreground);
-}
-
-/* === Background Grid Example === */
-.bg-grid {
-  background-image: var(--grid);
-  background-size: 6rem 4rem;
-}
-
-/* === Animations === */
-@keyframes spotlight

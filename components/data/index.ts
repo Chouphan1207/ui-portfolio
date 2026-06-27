@@ -1,4 +1,3 @@
-
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
@@ -72,25 +71,25 @@ export const gridItems = [
 
 export const services = [
   {
-    id:"1",
+    id: "1",
     title: "Web Development",
     description: "I build fast, responsive websites using modern technologies such as React, Next.js, and Node.js. Whether it's a marketing site, dashboard, or e-commerce platform, I ensure seamless performance, clean code, and maintainable architecture.",
     href: "",
   },
   {
-    id:"2",
+    id: "2",
     title: "Mobile Development",
     description: "I create robust mobile applications for both iOS and Android using tools like React Native and Flutter. My focus is on smooth performance, platform-native feel, and user-centered design that scales with your needs.",
     href: "",
   },
   {
-    id:"3",
+    id: "3",
     title: "UX/UI Design",
     description: "Crafting intuitive, elegant interfaces that prioritize user experience across web and mobile platforms. I focus on clean visual hierarchy, accessibility, and user flow to deliver high-impact design solutions.",
     href: "",
   },
   {
-    id:"4",
+    id: "4",
     title: "Guitar Gigs",
     description: "Available for live music events, private performances, and creative collaborations. I play a wide range of styles—from acoustic soul to electric rock—and tailor each session to fit the vibe and energy of your audience or event.",
     href: "",
@@ -130,7 +129,6 @@ export const blogItems = [
   },
 ];
 
-
 export const tools = [
   { name: "Next.js", icon: "/tools/next.png", description: "React Fullstack Framework" },
   { name: "React", icon: "/tools/react.png", description: "Frontend UI Library" },
@@ -145,4 +143,51 @@ export const tools = [
   { name: "Redux Toolkit", icon: "/tools/redux.png", description: "Global App State Management" },
   { name: "C++", icon: "/tools/c+.png", description: "Foundational OOP Languages" },
   { name: "Java", icon: "/tools/java.png", description: "Foundational OOP Languages" },
+];
+
+// Organized, scalable dataset ready for loop injection inside your components
+export const TIMELINE_PROJECTS = [
+  {
+    title: "2019 - 2020",
+    heading: "Market Research Assistant — INTAGE Vietnam",
+    description: "Managed and verified high-volume consumer datasets. Designed structured research questionnaires and worked with data analysts to translate raw survey numbers into clear trend reports for corporate clients.",
+    images: [],
+    altText: "Market Research Work"
+  },
+  {
+    title: "Late 2022",
+    heading: "Guitar Store App — University Capstone Project",
+    description: "Built a cross-platform e-commerce shop using Flutter and Dart featuring item filtering, real-time cart synchronization, and secure checkout. Integrated a real-time, microphone-based guitar tuner and anchored the app with a backend powered by PHP, Laravel, and MySQL.",
+    images: ["rp1", "rp3", "rp6", "rp2"],
+    altText: "Guitar Shop Project Screenshot"
+  },
+  {
+    title: "2023",
+    heading: "Graduation & Full-Stack Intern — PHARMATECH",
+    description: "Graduated with a Bachelor of IT (Software Development) and achieved a 7.0 IELTS score. Simultaneously completed a full-stack internship at PHARMATECH, where I maintained internal platforms, squashed bugs, and customized functional plugins.",
+    images: ["graduation2", "graduation", "ielts", "blog7"],
+    altText: "2023 Achievements"
+  },
+  {
+    title: "2023 - 2026",
+    heading: "Mandatory National Military Service",
+    description: "Led squads under high-pressure environments while handling combat medic responsibilities. Spearheaded secure administrative documentation control, modernizing old paper logs into efficient, highly secure Excel tracker sheets.",
+    images: ["duty1", "duty2", "duty3", "duty4", "duty5", "medic4", "medic2", "medic1"],
+    altText: "Military Service Records"
+  },
+  {
+    title: "2025 - Present",
+    heading: "Personal Portfolio Space",
+    description: "Architected a high-performance developer portfolio using Next.js and TypeScript. Integrated Redux Toolkit for global state and layout theme switching, added an interactive blogging feed with custom dynamic routes, and styled the UI with Tailwind CSS before deploying live on Vercel.",
+    images: [],
+    altText: "Next.js Portfolio Setup"
+  },
+  {
+    title: "Present",
+    heading: "Full-Stack Productivity App & Current Chapter",
+    description: "Building a cross-platform app utilizing Feature-Sliced Design (FSD) architecture in Flutter. Developed user authentication via JWT, local offline synchronization workflows, and a fast custom API backend using Node.js, Express, Prisma ORM, and Neon PostgreSQL.",
+    images: [],
+    altText: "Productivity App Architecture",
+    isClosingBranch: true
+  }
 ];

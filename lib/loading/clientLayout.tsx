@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { useLoading } from "./loading-context";
-import Header from "@/shared/ui/Header";
+import Header from "@/shared/ui/navBar/Header";
 import LoadingIntro from "@/shared/ui/LoadingIntro";
 import PageTransition from "@/shared/ui/PageTransition";
 

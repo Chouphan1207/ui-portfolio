@@ -32,7 +32,7 @@ const UserGrid = () => {
 
   if (!user.username) {
     return (
-      <div className="bg-[var(--muted-foreground)] rounded-full w-[80px] h-[48px] md:w-[80px] md:h-[40px]">
+      <div className="bg-[--muted-foreground] rounded-full w-20 h-12 md:w-20 md:h-10">
         <SignInModal />
       </div>
     )
@@ -40,7 +40,7 @@ const UserGrid = () => {
 
   return (
     <div
-      className="group relative flex items-center rounded-full bg-[var(--input)] hover:bg-[var(--card)] hover:bg-opacity-50 p-2 pe-4 transition-colors duration-300 cursor-pointer overflow-hidden w-fit"
+      className="group relative flex items-center rounded-full bg-[--input] hover:bg-[--card] hover:bg-opacity-50 p-2 pe-4 transition-colors duration-300 cursor-pointer overflow-hidden w-fit"
       onClick={handleSignOut}
     >
       <Image
@@ -57,7 +57,7 @@ const UserGrid = () => {
           ml-0
           max-w-10
           opacity-0
-          translate-x-[-10px]
+          translate-x-2.5
           overflow-hidden
           whitespace-nowrap
           transition-all
