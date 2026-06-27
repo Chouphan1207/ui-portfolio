@@ -51,9 +51,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           <div key={item.title} className="grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr] gap-4 pt-10 md:pt-16 first:pt-0">
 
             {/* Left Column - Interactive Dot & Sticky Timestamp */}
-            <div className="sticky flex items-center md:items-start z-40 top-24 self-start w-full">
+            <div className="sticky flex items-center md:items-start z-40 top-24 self-start w-full ">
               {/* Timeline Indicator Dot */}
-              <div className="h-8 w-8 absolute left-3 rounded-full flex items-center justify-center bg-primary border border-[--border] shadow-xs dark:border-white/10">
+              <div className="h-8 w-8 absolute left-3 rounded-full flex items-center justify-center bg-primary border border-[--border] shadow-xs dark:border-white/10 sm:hidden">
                 <div className="h-3 w-3 rounded-full bg-[--foreground] animate-pulse" />
               </div>
 
@@ -80,14 +80,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {/* Animated Background Progress Indicator Spine Line */}
         <div
           style={{ height: `${height}px` }}
-          className="absolute left-6.75 top-0 overflow-hidden w-0.5 bg-transparent"
+          className="absolute left-6.75 top-0 overflow-hidden w-0.5 bg-transparent sm:hidden"
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-full bg-linear-to-b from-(--primary) via-(--secondary) to-transparent rounded-full"
+            className="absolute inset-x-0 top-0 w-full bg-linear-to-b from-(--primary) via-(--secondary) to-transparent rounded-full "
           />
         </div>
       </div>
