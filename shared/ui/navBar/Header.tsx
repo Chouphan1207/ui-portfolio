@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+// @ts-ignore
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Component Imports (Adjusted based on your ui barrel index)
@@ -41,7 +42,7 @@ const Header = () => {
       {isLoadingDone && (
         <motion.header
           initial={{ opacity: 0, y: -60 }}
-          // Let Framer Motion fully manage the dynamic y-translation smoothly
+
           animate={{ opacity: 1, y: hidden ? -80 : 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4, ease: 'easeInOut' }}
