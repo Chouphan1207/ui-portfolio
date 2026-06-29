@@ -6,7 +6,6 @@ import { useLoading } from '@/lib/loading/loading-context'
 const LoadingIntro = () => {
   const [progress, setProgress] = useState(0)
   const [isCompleted, setIsCompleted] = useState(false)
-  const [backdropVisible, setBackdropVisible] = useState(false)
   const [fullyDone, setFullyDone] = useState(false)
 
   const { markLoadingDone } = useLoading()
@@ -32,50 +31,33 @@ const LoadingIntro = () => {
     return () => clearInterval(timer)
   }, [increment])
 
-  // 2. Fade in the blue backdrop dynamically as progress approaches the finish line
-  useEffect(() => {
-    if (progress >= 30) {
-      setBackdropVisible(true)
-    }
-  }, [progress])
-
-  // 3. Flattened sequence loops to orchestrate clean exit opacity fades
+  // 2. Lifecycle orchestration & unmounting cleanup
   useEffect(() => {
     if (!isCompleted) return
 
     markLoadingDone()
-
-    // ✨ Start fading out the blue backdrop overlay 500ms after the black screen slides up
-    const fadeOutTimer = setTimeout(() => {
-      setBackdropVisible(false)
-    }, 500)
-
-    // Completely unmount the intro layout container when opacity transitions finish completely
     const unmountTimer = setTimeout(() => {
       setFullyDone(true)
-    }, 1300) // 500ms delay + 700ms transition duration + buffer overhead
+    }, 1000)
 
-    return () => {
-      clearTimeout(fadeOutTimer)
-      clearTimeout(unmountTimer)
-    }
+    return () => clearTimeout(unmountTimer)
   }, [isCompleted, markLoadingDone])
 
   if (fullyDone) return null
 
   return (
     <div className="fixed top-0 left-0 w-full h-full z-50 pointer-events-none overflow-hidden">
-      {/* ✨ BLUE BACKDROP: Changed from transform slides to custom opacity fades */}
+      {/*BLUE BACKDROP LAYER */}
       <div
-        className={`absolute top-0 left-0 w-full h-full bg-[#566fc1] transition-opacity duration-700 ease-in-out ${
-          backdropVisible ? 'opacity-100' : 'opacity-0'
+        className={`absolute top-0 left-0 w-full h-full bg-[#566fc1] transition-transform duration-700 delay-200 ease-in-out ${
+          isCompleted ? '-translate-y-full' : 'translate-y-0'
         }`}
       />
 
-      {/* BLACK FOREGROUND PANEL */}
+      {/*BLACK FOREGROUND PANEL */}
       <div
         className={`absolute top-0 left-0 w-full h-full bg-black flex flex-col justify-between p-8 md:p-16 transition-transform duration-700 ease-in-out ${
-          isCompleted ? '-translate-y-full' : ''
+          isCompleted ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
         <div className="text-white font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[70px] tracking-tight">

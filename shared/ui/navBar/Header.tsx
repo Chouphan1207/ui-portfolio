@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-// @ts-ignore
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'motion/react';
+import { AnimatePresence } from 'framer-motion';
 
 // Component Imports (Adjusted based on your ui barrel index)
 import Nav from './Nav';
