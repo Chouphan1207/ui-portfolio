@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "../../../shared/ui/GradientBg";
@@ -6,12 +6,12 @@ import { Globe } from "./GridGlobe";
 import { useState, useEffect, useRef } from "react";
 import animationData from '@/components/data/confetti.json';
 import dynamic from 'next/dynamic';
-import { useAnimation, useInView } from 'framer-motion';
+import { useAnimation, useInView, motion, useScroll, useTransform } from 'framer-motion'; // 👈 added motion hooks
 import MagicButton from "../../../shared/ui/buttons/MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
 const LottieClient = dynamic(() => import('@/components/LottieClient'), { ssr: false });
 
-import { useTheme } from "next-themes"; // 👈 added
+import { useTheme } from "next-themes";
 
 export const BentoGrid = ({
   className,
@@ -23,7 +23,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-a",
+        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
         className
       )}
     >
@@ -31,7 +31,6 @@ export const BentoGrid = ({
     </div>
   );
 };
-
 
 export const BentoGridItem = ({
   className,
@@ -43,6 +42,7 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
+  parallax = false,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -53,13 +53,22 @@ export const BentoGridItem = ({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
+  parallax?: boolean;
 }) => {
   const [copied, setCopied] = useState(false);
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-20px' });
+
+  const itemRef = useRef(null);
+  const inView = useInView(itemRef, { once: true, margin: '-20px' });
   const controls = useAnimation();
-  const { theme } = useTheme()
+  const { theme } = useTheme();
   const resolvedImg = theme === "dark" && darkImg ? darkImg : img;
+
+  const { scrollYProgress } = useScroll({
+    target: itemRef,
+    offset: ["start end", "end start"]
+  });
+
+  const yImageOffset = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   const leftLists = ["ReactJS", "Flutter", "Typescript"];
   const rightLists = ["Postgres", "MS SQL", "Laravel"];
@@ -67,14 +76,13 @@ export const BentoGridItem = ({
   const handleCopy = () => {
     navigator.clipboard.writeText('chouphan1207@gmail.com');
     setCopied(true);
-  }
+  };
 
   useEffect(() => {
     if (inView) {
       controls.start('visible');
     }
   }, [inView, controls]);
-
 
   const defaultOptions = {
     loop: copied,
@@ -87,8 +95,9 @@ export const BentoGridItem = ({
 
   return (
     <div
+      ref={itemRef}
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border border-white/10  group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 mx-3",
+        "row-span-1 relative overflow-hidden rounded-3xl border border-white/10 group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 mx-3",
         className
       )}
       style={{
@@ -96,16 +105,33 @@ export const BentoGridItem = ({
         backgroundColor: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
     >
-      <div className={`${id === 6 && "flex justify-center"} h-full`}>
-        <div className="w-full h-full absolute">
+      <div className={`${id === 6 && "flex justify-center"} h-full relative`}>
+        <div className="w-full h-full absolute top-0 left-0 overflow-hidden">
           {resolvedImg && (
-            <img
-              src={resolvedImg}
-              alt={`grid-image-${id}`}
-              className={cn(imgClassName, "object-cover object-center")}
-            />
+            parallax ? (
+
+              <motion.img
+                src={resolvedImg}
+                alt={`grid-image-${id}`}
+                style={{ y: yImageOffset }}
+                className={cn(
+                  imgClassName,
+                  "object-cover object-center absolute -inset-y-12 inset-x-0 w-full h-[calc(100%+6rem)] will-change-transform scale-105"
+                )}
+              />
+            ) : (
+              <img
+                src={resolvedImg}
+                alt={`grid-image-${id}`}
+                className={cn(imgClassName, "object-cover object-center w-full h-full")}
+              />
+            )
           )}
         </div>
+
+        {parallax && (
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-1" />
+        )}
 
         <div
           className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"}`}
@@ -128,7 +154,7 @@ export const BentoGridItem = ({
         <div
           className={cn(
             titleClassName,
-            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
+            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10 z-10"
           )}
         >
           <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-var(--description) z-10">
@@ -153,10 +179,10 @@ export const BentoGridItem = ({
                     {item}
                   </span>
                 ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-primary"></span>
+                <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-primary"></span>
               </div>
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-4">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-primary"></span>
+                <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-primary"></span>
                 {rightLists.map((item, i) => (
                   <span
                     key={i}

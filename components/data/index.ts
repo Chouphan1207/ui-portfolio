@@ -7,16 +7,17 @@ export const navItems = [
 
 export const gridItems = [
   {
-    id: 1,
-    title: "Dedicated Full-Stack Developer with hands-on experience bridging cross-platform mobile systems and cloud-native backends",
-    description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
-    imgClassName: "w-full h-full",
-    titleClassName: "justify-start text-[#edf1ff] ",
-    img: "/b1.jpg",
-    darkImg: "/b2.gif",
-    spareImg: "",
-  },
+      id: 1,
+      title: "Dedicated Full-Stack Developer with hands-on experience bridging cross-platform mobile systems and cloud-native backends",
+      description: "",
+      className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
+      imgClassName: "w-full",
+      titleClassName: "justify-start text-title ",
+      img: "/b1.jpg",
+      darkImg: "/b2.gif",
+      spareImg: "",
+      parallax: true,
+    },
   {
     id: 2,
     title: "Grounded in strict operational efficiency, resilience, and agile team communication",
