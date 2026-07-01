@@ -2,6 +2,12 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
   /* --- Typography --- */
   --font-sans: 'Space Grotesk', sans-serif;
 
@@ -20,7 +26,6 @@
   }
 
   /* --- Native Tailwind Utility Engine Mapping --- */
-  /* This automatically generates utility classes like text-title, bg-primary, etc. */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -55,14 +60,14 @@
   --radius-xl: 0.75rem;
 }
 
-/* Apply Base Styles */
+/* Apply Base Styles using v4 syntax */
 @layer base {
-  :root {
+  html, body {
     font-family: var(--font-sans);
   }
 }
 
-/* --- DESIGN TOKENS (Your Exact Original Colors) --- */
+/* --- DESIGN TOKENS --- */
 :root {
   /* --- LIGHT MODE (Soft Ice-Blue & Sleek Slate) --- */
   --background: #f4f7fe;
@@ -91,8 +96,8 @@
   --input: #e2e8f0;
   --ring: #3b82f6;
 
-  /* Text & Grid Helpers */
-  --title: #e2e8f0;
+  /* Text & Grid Helpers (Fixed light-mode title color to dark slate) */
+  --title: #0f172a;
   --description: #475569;
   --grid: #e2e8f0;
 }
@@ -132,7 +137,6 @@
 }
 
 /* --- Complex Layout Utilities --- */
-/* Kept separate because it creates a complex structural CSS rule */
 .bg-grid {
   background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px),
                     linear-gradient(to bottom, var(--grid) 1px, transparent 1px);

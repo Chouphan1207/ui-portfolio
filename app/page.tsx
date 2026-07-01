@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Hero from "@/components/home/Hero"
 import Grid from "@/components/home/grid/Grid"
-import RecentProjects from '@/components/home/RecentProjects'
+import RecentProjects from "@/components/home/RecentProjects"
 
 export default function Home() {
   return (
@@ -43,7 +43,7 @@ export default function Home() {
           <Hero />
         </div>
         <Grid />
-        <RecentProjects />
+        <RecentProjects/>
       </div>
 
     </main>

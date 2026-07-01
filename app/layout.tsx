@@ -3,7 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css"; // Kept locally in app layer for global styling
 
 // FSD Shared Layer Imports
-import { ThemeProvider } from "@/shared/ui/theme-provider";
+import { ThemeProvider } from "@/shared/ui/ThemeProvider";
 import { LoadingProvider } from "@/lib/loading/loading-context";
 import StoreProvider from "@/shared/state/provider";
 
