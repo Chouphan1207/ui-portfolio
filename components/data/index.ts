@@ -186,7 +186,7 @@ export const timeline_projects = [
     title: "Present",
     heading: "Full-Stack Productivity App & Current Chapter",
     description: "Building a cross-platform app utilizing Feature-Sliced Design (FSD) architecture in Flutter. Developed user authentication via JWT, local offline synchronization workflows, and a fast custom API backend using Node.js, Express, Prisma ORM, and Neon PostgreSQL.",
-    images: [],
+    images: ["fm1", "fm2"],
     altText: "Productivity App Architecture",
     isClosingBranch: true
   }
