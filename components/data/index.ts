@@ -7,17 +7,17 @@ export const navItems = [
 
 export const gridItems = [
   {
-      id: 1,
-      title: "Dedicated Full-Stack Developer with hands-on experience bridging cross-platform mobile systems and cloud-native backends",
-      description: "",
-      className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
-      imgClassName: "w-full",
-      titleClassName: "justify-start text-title ",
-      img: "/b1.jpg",
-      darkImg: "/b2.gif",
-      spareImg: "",
-      parallax: true,
-    },
+    id: 1,
+    title: "Dedicated Full-Stack Developer with hands-on experience bridging cross-platform mobile systems and cloud-native backends",
+    description: "",
+    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
+    imgClassName: "w-full",
+    titleClassName: "justify-start text-title ",
+    img: "/b1.jpg",
+    darkImg: "/b2.gif",
+    spareImg: "",
+    parallax: true,
+  },
   {
     id: 2,
     title: "Grounded in strict operational efficiency, resilience, and agile team communication",
@@ -152,6 +152,7 @@ export const timeline_projects = [
     heading: "Market Research Assistant — INTAGE Vietnam",
     description: "Managed and verified high-volume consumer datasets. Designed structured research questionnaires and worked with data analysts to translate raw survey numbers into clear trend reports for corporate clients.",
     images: [],
+    link: "",
     altText: "Market Research Work"
   },
   {
@@ -159,6 +160,7 @@ export const timeline_projects = [
     heading: "Guitar Store App — University Capstone Project",
     description: "Built a cross-platform e-commerce shop using Flutter and Dart featuring item filtering, real-time cart synchronization, and secure checkout. Integrated a real-time, microphone-based guitar tuner and anchored the app with a backend powered by PHP, Laravel, and MySQL.",
     images: ["rp1", "rp3", "rp6", "rp2"],
+    link: "https://github.com/Chouphan1207/ui-guitarstore-app",
     altText: "Guitar Shop Project Screenshot"
   },
   {
@@ -166,6 +168,7 @@ export const timeline_projects = [
     heading: "Graduation & Full-Stack Intern — PHARMATECH",
     description: "Graduated with a Bachelor of IT (Software Development) and achieved a 7.0 IELTS score. Simultaneously completed a full-stack internship at PHARMATECH, where I maintained internal platforms, squashed bugs, and customized functional plugins.",
     images: ["graduation2", "graduation", "ielts", "blog7"],
+    link: "",
     altText: "2023 Achievements"
   },
   {
@@ -173,6 +176,7 @@ export const timeline_projects = [
     heading: "Mandatory National Military Service",
     description: "Led squads under high-pressure environments while handling combat medic responsibilities. Spearheaded secure administrative documentation control, modernizing old paper logs into efficient, highly secure Excel tracker sheets.",
     images: ["duty2", "duty3", "medic4", "medic2"],
+    link: "",
     altText: "Military Service Records"
   },
   {
@@ -180,6 +184,7 @@ export const timeline_projects = [
     heading: "Personal Portfolio Space",
     description: "Architected a high-performance developer portfolio using Next.js and TypeScript. Integrated Redux Toolkit for global state and layout theme switching, added an interactive blogging feed with custom dynamic routes, and styled the UI with Tailwind CSS before deploying live on Vercel.",
     images: [],
+    link: "https://github.com/Chouphan1207/ui-portfolio",
     altText: "Next.js Portfolio Setup"
   },
   {
@@ -187,6 +192,7 @@ export const timeline_projects = [
     heading: "Full-Stack Productivity App & Current Chapter",
     description: "Building a cross-platform app utilizing Feature-Sliced Design (FSD) architecture in Flutter. Developed user authentication via JWT, local offline synchronization workflows, and a fast custom API backend using Node.js, Express, Prisma ORM, and Neon PostgreSQL.",
     images: ["fm1", "fm2"],
+    link: "https://github.com/Chouphan1207/flutter_management",
     altText: "Productivity App Architecture",
     isClosingBranch: true
   }
