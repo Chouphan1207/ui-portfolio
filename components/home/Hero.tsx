@@ -29,7 +29,7 @@ const Hero = () => {
         <div className="relative z-10 max-w-5xl w-full py-16 md:py-24 flex flex-col items-center md:items-start text-center md:text-left gap-6">
 
           {/* Subheading Badge */}
-          <h2 className="uppercase tracking-widest text-xs md:text-sm text-title font-semibold">
+          <h2 className="uppercase tracking-widest text-xs md:text-sm text-white font-semibold">
             Dynamic Web Mag ic with Next.js
           </h2>
 
@@ -40,7 +40,7 @@ const Hero = () => {
           />
 
           {/* Description Copy */}
-          <p className="max-w-2xl text-base md:text-lg lg:text-xl text-description tracking-wide">
+          <p className="max-w-2xl text-base md:text-lg lg:text-xl text-white tracking-wide">
             Hi, I&apos;m Tin, a Full-stack freshman based in Ho Chi Minh City, VietNam.
           </p>
 

@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useRef, useState } from "react";
-import { Timeline } from "@/components/home/Timeline";
+import { Timeline } from "@/components/services/Timeline";
 import { timeline_projects } from "../data";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Button } from "@/shared/ui/buttons/button"; // 👈 Your custom Button imported here

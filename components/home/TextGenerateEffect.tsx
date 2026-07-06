@@ -45,7 +45,7 @@ export const TextGenerateEffect = ({
                 key={word + idx}
                 className={`${idx > 2
                   ? "bg-linear-to-b from-primary to-secondary text-transparent bg-clip-text"
-                  : "text-title"} opacity-0`}
+                  : "text-white"} opacity-0`}
                 style={{ filter: filter ? "blur(10px)" : "none" }}
               >
                 {word}{" "}

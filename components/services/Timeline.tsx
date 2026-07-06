@@ -96,7 +96,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {/* Animated Background Progress Indicator Spine Line */}
         <div
           style={{ height: `${height}px` }}
-          className="hidden md:block absolute left-[27px] top-0 overflow-hidden w-0.5 bg-transparent"
+          className="hidden md:block absolute left-6.75 top-0 overflow-hidden w-0.5 bg-transparent"
         >
           <motion.div
             style={{
