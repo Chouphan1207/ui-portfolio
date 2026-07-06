@@ -130,7 +130,7 @@ export const BentoGridItem = ({
         </div>
 
         {parallax && (
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-1" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent z-1" />
         )}
 
         <div
