@@ -12,8 +12,20 @@ export default function ClientLayoutContent({ children }: { children: ReactNode 
   return (
     <>
       <LoadingIntro />
-      {isLoadingDone && <Header />}
-      <PageTransition>{children}</PageTransition>
+      <div
+        className={`transition-opacity duration-500 ${
+          isLoadingDone ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <Header />
+      </div>
+
+      <main className={`transition-opacity duration-500 delay-300 ${
+          isLoadingDone ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <PageTransition>{children}</PageTransition>
+      </main>
     </>
   );
 }

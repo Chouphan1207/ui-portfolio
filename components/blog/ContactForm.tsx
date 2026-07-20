@@ -124,7 +124,7 @@ export function ContactForm() {
         </LabelInputContainer>
 
         <button
-          className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-900 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] transition duration-300 hover:brightness-150 hover:shadow-lg"
+          className="group/btn relative block h-10 w-full rounded-md bg-linear-to-br from-black to-neutral-900 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] transition duration-300 hover:brightness-150 hover:shadow-lg"
           type="submit"
         >
           Send &rarr;
@@ -136,25 +136,22 @@ export function ContactForm() {
 
         <div className="flex flex-col space-y-4">
           <button
-            className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gradient-to-br from-black to-neutral-900 px-4 font-medium text-black  dark:shadow-[0px_0px_1px_1px_#262626] transition duration-300 hover:brightness-150"
+            className="group/btn relative flex h-10 w-full items-center justify-center space-x-2 rounded-md bg-neutral-800 px-4 font-medium text-white transition duration-300 hover:bg-neutral-700"
             type="button"
+            onClick={() => window.open("https://github.com/Chouphan1207", "_blank")}
           >
-            <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-            <span className="text-sm text-neutral-700 dark:text-neutral-300"
-            onClick={() => window.open("https://github.com/Chouphan1207", "_blank")}>
-              GitHub
-            </span>
+            <IconBrandGithub className="h-4 w-4" />
+            <span className="text-sm">GitHub</span>
             <BottomGradient />
           </button>
+
           <button
-            className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gradient-to-br from-black to-neutral-900 px-4 font-medium text-black  dark:shadow-[0px_0px_1px_1px_#262626] transition duration-300 hover:brightness-150"
+            className="group/btn relative flex h-10 w-full items-center justify-center space-x-2 rounded-md bg-neutral-800 px-4 font-medium text-white transition duration-300 hover:bg-neutral-700"
             type="button"
+            onClick={() => window.open("mailto:chouphan1207@gmail.com", "_blank")}
           >
-            <IconBrandGoogle className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-            <span className="text-sm text-neutral-700 dark:text-neutral-300"
-            onClick={() => window.open("mailto:chouphan1207@gmail.com", "_blank")}>
-              Google
-            </span>
+            <IconBrandGoogle className="h-4 w-4" />
+            <span className="text-sm">Google</span>
             <BottomGradient />
           </button>
         </div>

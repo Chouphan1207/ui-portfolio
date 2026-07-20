@@ -33,7 +33,7 @@ const MobileNav = () => {
 
       {/* Slide-in Menu */}
       <div
-        className={`fixed top-0 right-0 h-screen w-64 bg-primary transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-screen w-64 bg-background transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } z-40 md:hidden shadow-xl`}
       >

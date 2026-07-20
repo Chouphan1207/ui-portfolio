@@ -1,85 +1,73 @@
 import React from 'react';
 import { ContactForm } from '@/components/blog/ContactForm';
-import { Spotlight } from '@/components/contact/Spotlight';
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-primary text-title py-25">
-      <div className="relative w-full h-full">
-        <Spotlight className=" -top-40 -left-10 md:-left-32 md:-top-20 h-screen" fill="#3fc1c0" />
-        <Spotlight className=" -top-10 left-[80%] h-[80vh] w-[40vw]" fill="#0899ba" />
-        <Spotlight className=" top-28 left-80 h-[80vh] w-[50vw]" fill="#1c558e" />
-      </div>
-      {/* Header Section */}
-      <div className="text-center mb-12 w-screen">
-        <p className="text-2xl font-medium text-description mb-2">Contact Me</p>
-        <h1 className="text-4xl sm:text-6xl font-bold mb-2">
-          I&apos;d love to hear from you
-        </h1>
-        <p className="text-xl text-neutral-500">
-          I&apos;ll be available in July 2025 in Ho Chi Minh City, Vietnam.
-        </p>
-      </div>
+    // Sử dụng class bg-image-overlay (đã định nghĩa sẵn trong global.css của bạn)
+    <div className="relative min-h-screen w-full py-20 px-4 bg-image-overlay bg-fixed">
+      {/* Lớp Overlay đã nằm trong global.css, không cần div absolute ở đây nữa */}
 
-      <div className="flex flex-col md:flex-row justify-center items-center relative">
-        {/* Map Section */}
-        <div className="hidden lg:block relative w-190 h-162.5 overflow-hidden py-5 z-0 animate-slide-left">
-          <img
-            src="/maplg.png"
-            alt="World map"
-            className="absolute top-0 left-2 w-full h-full object-cover rounded-xl"
-          />
-          <div className="absolute top-[35%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <div className="w-8 h-8 bg-[--ring] rounded-full shadow-md animate-ping" />
-            <div className="w-4 h-4 bg-[--accent] border-b-4 border-blue-950 rounded-full absolute top-2 left-2" />
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="text-center mb-16 py-10">
+          <p className="text-sm font-bold text-[#81e4da] uppercase tracking-widest mb-4">Contact Me</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-[#e2e8f0] mb-6">I'd love to hear from you</h1>
+          <p className="text-xl text-[#81e4da] max-w-lg mx-auto">
+            I'm currently available for new projects and collaborations. Let's build something great together.
+          </p>
+        </div>
+
+        {/* Info Boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+          {[
+            // Truyền thêm thuộc tính 'isEmail' hoặc kiểm tra trực tiếp
+            {
+              title: "Available for Work",
+              desc: "Open to freelance & full-time roles.",
+              action: "chouphan1207@gmail.com",
+              href: "mailto:chouphan1207@gmail.com"
+            },
+            { title: "Skills & Expertise", desc: "React, Next.js, UI/UX & Motion.", action: "View My Resume", href: "#" },
+            { title: "Let's Connect", desc: "Always excited to explore projects.", action: "LinkedIn Profile", href: "#" }
+          ].map((item, idx) => (
+            <div key={idx} className="bg-card/90 backdrop-blur-md p-6 rounded-2xl border border-border hover:border-primary transition-all flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-title mb-2">{item.title}</h3>
+                <p className="text-description mb-4 text-sm opacity-80">{item.desc}</p>
+              </div>
+
+              {/* Ép kiểu thẻ a nhận href từ object */}
+              <a
+                href={item.href}
+                className="text-primary font-medium hover:underline text-sm block"
+                target={item.href.startsWith("mailto") ? "_self" : "_blank"}
+                rel={item.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+              >
+                {item.action} →
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/*Ô Contact và nơi ở*/}
+        <div className="flex justify-center items-center lg:justify-center lg:items-center w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start w-fit">
+            <div className="hidden lg:block relative w-190 h-162.5 overflow-hidden py-5 top-3 z-0 animate-slide-left ml-30">
+              <img
+                src="/maplg.png"
+                alt="World map"
+                className="absolute top-0 w-full h-full object-cover rounded-xl"
+              />
+              <div className="absolute top-[35%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10">
+                <div className="w-8 h-8 bg-ring rounded-full shadow-md animate-ping" />
+                <div className="w-4 h-4 bg-accent border-b-4 border-blue-950 rounded-full absolute top-2 left-2" />
+              </div>
+            </div>
+
+            {/* Form Container */}
+            <div className="bg-card/30 backdrop-blur-md rounded-2xl shadow-xl z-1 mx-auto">
+              <ContactForm />
+            </div>
           </div>
-        </div>
-        <div className="w-100 p-8 md:p-0 z-20">
-          <ContactForm />
-        </div>
-      </div>
-
-      {/* Info Boxes */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-10">
-        <div>
-          <h3 className="text-xl font-semibold mb-2">Available for Work</h3>
-          <p className="text-sm text-neutral-500 mb-1">
-            I&apos;m currently open to freelance or full-time opportunities.
-          </p>
-          <a
-            href="mailto:chouphan1207@gmail.com"
-            className="text-description hover:underline text-md"
-          >
-            chouphan1207@gmail.com
-          </a>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-2">Skills & Expertise</h3>
-          <p className="text-sm text-neutral-500 mb-1">
-            React, Next.js, Tailwind CSS, UI/UX, Motion Design & more.
-          </p>
-          <a
-            href="https://drive.google.com/file/d/16_KDCjM10A5jgRFTQKvMYIt_LVXsa6T2/view?usp=drive_link"
-            className="text-description hover:underline text-md"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View My Resume
-          </a>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-2">Let&apos;s Connect</h3>
-          <p className="text-sm text-neutral-500 mb-1">
-            I&apos;m always excited to explore creative projects.
-          </p>
-          <a
-            href="https://www.linkedin.com/in/tin-phan-hoang-trong-110a2422a/"
-            className="text-description hover:underline text-md"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn Profile
-          </a>
         </div>
       </div>
     </div>

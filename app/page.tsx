@@ -31,7 +31,6 @@ export default function Home() {
           <Grid />
         </section>
 
-        {/* Blog Section - Cần đảm bảo Container có chiều cao rõ ràng */}
         <section className="relative w-full min-h-screen flex flex-col items-center justify-center py-20">
           <DraggableCardContainer className="relative w-full h-150 flex items-center justify-center">
             {blogItems.map((item, index) => (
