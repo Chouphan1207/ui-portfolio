@@ -8,12 +8,12 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "Dedicated Full-Stack Developer with hands-on experience bridging cross-platform mobile systems and cloud-native backends",
+    title: "Dedicated Full-Stack Developer, bridging cross-platform Frontend systems and cloud-native backends",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
     imgClassName: "w-full",
-    titleClassName: "justify-start text-title ",
-    img: "/b1.jpg",
+    titleClassName: "justify-end text-title ",
+    img: "/b1.png",
     darkImg: "/b2.gif",
     spareImg: "",
     parallax: true,
@@ -52,15 +52,15 @@ export const gridItems = [
     id: 5,
     title: "Successfully resuming full-stack proficiency after serving honorably in national military service (2023 - 2026)",
     description: "The Timeline",
-    className: "md:col-span-3 md:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
+    className: "md:col-span-3 md:row-span-2 bg-primary",
+    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60, opacity-30",
     titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
+    img: "/b5.png",
     spareImg: "/grid.svg",
   },
   {
     id: 6,
-    title: "Looking for an adaptable Full-Stack / Mobile Developer to join your engineering crew?",
+    title: "Looking for a Full-Stack Developer to join your engineering crew?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -99,35 +99,37 @@ export const services = [
 
 export const blogItems = [
   {
-    title: "UEF IT Graduation",
-    image: "/blog7.jpg",
-    className: "absolute top-20 right-[35%] rotate-[2deg]",
+    title: "Lifestyle",
+    image: "/blog2.jpg",
+    className: "absolute bottom-50 left-[0%] rotate-[4deg]",
   },
   {
-    title: "Pharmatech Internship",
-    image: "/blog6.jpg",
+    title: "Achivements",
+    image: "/blog7.jpg",
+    className: "absolute bottom-50 right-[5%] rotate-[2deg]",
+  },
+  {
+    title: "Military Discipline",
+    image: "/blog5.jpg",
+    className: "absolute top-40 left-[5%] rotate-[-7deg]",
+  },
+  {
+    title: "Teamwork",
+    image: "/blog1.jpg",
+    className: "absolute bottom-40 left-[40%] rotate-[8deg]",
+  },
+  {
+    title: "Efficient UI Design",
+    image: "/blog6.png",
     className: "absolute top-10 left-[20%] rotate-[-5deg]",
   },
   {
-    title: "Military Honor & Discipline",
-    image: "/blog5.jpg",
-    className: "absolute top-40 left-[25%] rotate-[-7deg]",
-  },
-  {
-    title: "Next.js & Cloud Database Sprint",
-    image: "/blog4.jpg",
+    title: "ERD Design",
+    image: "/b5.png",
     className: "absolute top-32 left-[55%] rotate-[10deg]",
   },
-  {
-    title: "Music Engineering & Guitar Sessions",
-    image: "/blog2.jpg",
-    className: "absolute top-8 left-[30%] rotate-[4deg]",
-  },
-  {
-    title: "Collaborative Open Source Labs",
-    image: "/blog1.jpg",
-    className: "absolute top-5 left-[40%] rotate-[8deg]",
-  },
+
+
 ];
 
 export const tools = [
@@ -147,14 +149,14 @@ export const tools = [
 ];
 
 export const timeline_projects = [
-  {
-    title: "2019 - 2020",
-    heading: "Market Research Assistant — INTAGE Vietnam",
-    description: "Managed and verified high-volume consumer datasets. Designed structured research questionnaires and worked with data analysts to translate raw survey numbers into clear trend reports for corporate clients.",
-    images: [],
-    link: "",
-    altText: "Market Research Work"
-  },
+  // {
+  //   title: "2019 - 2020",
+  //   heading: "Market Research Assistant — INTAGE Vietnam",
+  //   description: "Managed and verified high-volume consumer datasets. Designed structured research questionnaires and worked with data analysts to translate raw survey numbers into clear trend reports for corporate clients.",
+  //   images: [],
+  //   link: "",
+  //   altText: "Market Research Work"
+  // },
   {
     title: "Late 2022",
     heading: "Guitar Store App — University Capstone Project",
@@ -172,7 +174,7 @@ export const timeline_projects = [
     altText: "2023 Achievements"
   },
   {
-    title: "2023 - 2026",
+    title: "May-2023 - April-2026",
     heading: "Mandatory National Military Service",
     description: "Led squads under high-pressure environments while handling combat medic responsibilities. Spearheaded secure administrative documentation control, modernizing old paper logs into efficient, highly secure Excel tracker sheets.",
     images: ["duty2", "duty3", "medic4", "medic2"],
@@ -181,10 +183,10 @@ export const timeline_projects = [
   },
   {
     title: "2025 - Present",
-    heading: "Personal Portfolio Space",
-    description: "Architected a high-performance developer portfolio using Next.js and TypeScript. Integrated Redux Toolkit for global state and layout theme switching, added an interactive blogging feed with custom dynamic routes, and styled the UI with Tailwind CSS before deploying live on Vercel.",
-    images: [],
-    link: "https://github.com/Chouphan1207/ui-portfolio",
+    heading: "Sunburst Full-stack Website - Blog & Management Sites (Back-end Focused)",
+    description: "Design ERD, solve action and API Logic, build native Server based on Laravel Framework - PHP, HTML#, and Blade Language for club management purpose",
+    images: ["sb1", "sb2", "sb3", "sb4"],
+    link: "https://github.com/B-0-w-d/Sunburst",
     altText: "Next.js Portfolio Setup"
   },
   {

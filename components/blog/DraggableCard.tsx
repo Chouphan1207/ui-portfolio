@@ -163,7 +163,7 @@ export const DraggableCardBody = ({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative min-h-96 w-80 overflow-hidden rounded-md bg-secondary p-6 shadow-2xl transform-3d mt-20 xl:ml-15",
+        "relative min-h-96 w-80 overflow-hidden rounded-md bg-white p-6 shadow-2xl transform-3d mt-20 xl:ml-15 z-99",
         className,
       )}
     >
@@ -186,6 +186,6 @@ export const DraggableCardContainer = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div className={cn("[perspective:3000px]", className)}>{children}</div>
+    <div className={cn("[perspec tive:3000px]", className)}>{children}</div>
   );
 };

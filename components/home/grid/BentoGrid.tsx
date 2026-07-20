@@ -70,7 +70,7 @@ export const BentoGridItem = ({
 
   const yImageOffset = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
-  const leftLists = ["ReactJS", "Flutter", "Typescript"];
+  const leftLists = ["Dart", "HTML", "Typescript"];
   const rightLists = ["Postgres", "MS SQL", "Laravel"];
 
   const handleCopy = () => {
