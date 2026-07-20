@@ -19,8 +19,8 @@ export default function Home() {
           quality={100}
           className="object-cover object-center scale-105"
         />
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-[5px] dark:bg-black/50" />
-      </div>
+        <div className="absolute inset-0 bg-background/90 md:bg-background/80 md:backdrop-blur-[5px] dark:bg-black/80 md:dark:bg-black/50" />
+        </div>
 
       {/* 2. FOREGROUND CONTENT LAYER */}
       <div className="relative z-10 w-full flex flex-col items-center">

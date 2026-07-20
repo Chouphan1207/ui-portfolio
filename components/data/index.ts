@@ -7,7 +7,7 @@ export const gridItems = [
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] ",
     imgClassName: "w-full",
-    titleClassName: "justify-end text-title ",
+    titleClassName: "justify-end text-[#e2e8f0] ",
     img: "/b1.png",
     darkImg: "/b2.gif",
     spareImg: "",
