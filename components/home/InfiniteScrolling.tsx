@@ -4,7 +4,7 @@ export default function InfiniteScrollTools() {
   return (
     <div className="relative py-10 bg-transparent overflow-hidden">
       {/* Container áp dụng mask-image để mờ dần 2 cạnh */}
-      <div className="w-full [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+      <div className="w-full mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)">
         <div className="flex animate-scroll whitespace-nowrap w-max gap-6">
           {[...tools, ...tools].map((tool, index) => (
             <div

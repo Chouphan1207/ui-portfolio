@@ -4,10 +4,11 @@ import { ContactForm } from '@/components/blog/ContactForm';
 const ContactPage = () => {
   return (
     // Sử dụng class bg-image-overlay (đã định nghĩa sẵn trong global.css của bạn)
+
     <div className="relative min-h-screen w-full py-20 px-4 bg-image-overlay bg-fixed">
       {/* Lớp Overlay đã nằm trong global.css, không cần div absolute ở đây nữa */}
-
       <div className="relative z-10 max-w-6xl mx-auto">
+
         <div className="text-center mb-16 py-10">
           <p className="text-sm font-bold text-[#81e4da] uppercase tracking-widest mb-4">Contact Me</p>
           <h1 className="text-5xl md:text-6xl font-bold text-[#e2e8f0] mb-6">I'd love to hear from you</h1>

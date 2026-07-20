@@ -135,6 +135,12 @@ export function RecentProjects() {
   return (
     <div className="relative w-full overflow-clip">
       <Timeline data={mappedTimelineData} />
+      <div
+        className="absolute bottom-0 left-0 right-250 h-80"
+        style={{
+          background: "linear-gradient(to top, var(--background) 0%, transparent 100%)"
+        }}
+      />
     </div>
   );
 }

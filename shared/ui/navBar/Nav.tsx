@@ -1,28 +1,30 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import clsx from "clsx";
-import { NAV_LINKS } from '@/shared/config/navigation'; // Adjust path based on your aliases
+import { NAV_LINKS } from '@/shared/config/navigation';
 
 const Nav = () => {
-  const pathname = usePathname();
+  // Hàm cuộn mượt mà
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className='hidden md:flex lg:flex items-center justify-end gap-6 ml-auto'>
-      {NAV_LINKS.map((link, index) => (
-        <Link
-          href={link.path}
-          key={index}
+      {NAV_LINKS.map((link) => (
+        <button
+          key={link.sectionId} // Sử dụng sectionId làm key duy nhất thay vì index
+          onClick={() => scrollToSection(link.sectionId)}
           className={clsx(
             "capitalize font-medium transition-all duration-200",
-            link.path === pathname
-              ? "text-[#33d4ff] border-b-2 border-text-color"
-              : "text-title hover:text-[#33d4ff]"
+            "text-title hover:text-[#33d4ff]" // Style mặc định
           )}
         >
           {link.name}
-        </Link>
+        </button>
       ))}
     </nav>
   );

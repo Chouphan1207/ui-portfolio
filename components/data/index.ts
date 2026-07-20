@@ -94,34 +94,29 @@ export const services = [
 
 export const blogItems = [
   {
-    title: "Lifestyle",
-    image: "/blog2.jpg",
-    className: "absolute bottom-50 left-[0%] rotate-[4deg]",
+    title: "Frontend Development",
+    image: "/blog7.png",
+    className: "absolute bottom-50 right-[10%] rotate-[8deg]",
   },
   {
-    title: "Achivements",
-    image: "/blog7.jpg",
-    className: "absolute bottom-50 right-[5%] rotate-[2deg]",
+    title: "Professional Structure",
+    image: "/blog5.png",
+    className: "absolute bottom-50 left-[5%] rotate-[-7deg]",
   },
   {
-    title: "Military Discipline",
-    image: "/blog5.jpg",
-    className: "absolute top-40 left-[5%] rotate-[-7deg]",
+    title: "Backend Development",
+    image: "/blog1.png",
+    className: "absolute bottom-40 left-[37%]",
   },
   {
-    title: "Teamwork",
-    image: "/blog1.jpg",
-    className: "absolute bottom-40 left-[40%] rotate-[8deg]",
-  },
-  {
-    title: "Efficient UI Design",
+    title: "Performance Optimization",
     image: "/blog6.png",
     className: "absolute top-10 left-[20%] rotate-[-5deg]",
   },
   {
-    title: "ERD Design",
+    title: "Architecture & Infrastructure",
     image: "/b5.png",
-    className: "absolute top-32 left-[55%] rotate-[10deg]",
+    className: "absolute top-30 left-[55%] rotate-[10deg]",
   },
 
 
