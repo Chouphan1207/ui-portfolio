@@ -45,7 +45,7 @@ const Header = () => {
           animate={{ opacity: 1, y: hidden ? -80 : 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4, ease: 'easeInOut' }}
-          className="fixed top-0 left-0 w-full h-20 z-9999 bg-background/40 backdrop-blur-md shadow-md flex items-center"
+          className="fixed top-0 left-0 w-full h-20 z-9999 bg-background/70 backdrop-blur-md shadow-md flex items-center"
         >
           <div className="w-full max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center gap-10">
 
