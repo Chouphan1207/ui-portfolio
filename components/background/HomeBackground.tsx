@@ -22,8 +22,7 @@ export default function HomeBackground() {
           quality={100}
           sizes="100vw"
           // Sử dụng object-right-top hoặc tinh chỉnh chính xác pixel/percent cho mobile
-          className="object-cover object-[60%_30%] md:object-[left_center] scale-110"
-        />
+          className="object-cover object-right md:object-[left_center] scale-105"        />
       </motion.div>
 
       {/* Lớp phủ mờ (Overlay) */}
