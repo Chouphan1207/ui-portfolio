@@ -75,9 +75,9 @@ const Header = () => {
             </nav>
 
             {/* Actions: Đã loại bỏ UserGrid, giữ lại ModeToggle và MobileNav với layout cân đối */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-15">
               <ModeToggle />
-              <div className="md:hidden">
+              <div className="flex items-center md:hidden">
                 <MobileNav />
               </div>
             </div>
