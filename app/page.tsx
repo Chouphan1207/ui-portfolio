@@ -2,7 +2,7 @@ import Hero from "@/components/home/Hero"
 import Grid from "@/components/home/grid/Grid"
 import RecentProjects from "@/components/sections/RecentProjects"
 import ContactPage from "../components/sections/Contact"
-import HomeBackground from "@/components/sections/HomeBackground"
+import HomeBackground from "@/components/background/HomeBackground"
 import Footer from "@/components/sections/Footer"
 import ServicesSection from "@/components/sections/ServiceSection"
 
