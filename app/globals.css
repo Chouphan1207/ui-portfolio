@@ -159,7 +159,7 @@
 }
 
 .bg-image-overlay {
-    background-image: url('/bg-2.jpeg');
+    background-image: url('/bg-2.JPEG');
     /* Thay đường dẫn ảnh của bạn */
     background-size: cover;
     background-position: center;
