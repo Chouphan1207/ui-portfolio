@@ -21,7 +21,8 @@ export default function HomeBackground() {
           priority
           quality={100}
           sizes="100vw"
-          className="object-cover object-[88%_center] md:object-[left_center] scale-110"
+          // Sử dụng object-right-top hoặc tinh chỉnh chính xác pixel/percent cho mobile
+          className="object-cover object-[60%_30%] md:object-[left_center] scale-110"
         />
       </motion.div>
 
