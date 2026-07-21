@@ -39,7 +39,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/ui/TextHover",
+    "components/background/TextHover",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [

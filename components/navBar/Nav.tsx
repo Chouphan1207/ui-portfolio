@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from "clsx";
-import { NAV_LINKS } from '@/shared/config/navigation';
+import { NAV_LINKS } from '@/app/config/navigation';
 
 const Nav = () => {
   // Hàm cuộn mượt mà

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactForm } from '@/components/blog/ContactForm';
+import { ContactForm } from '@/components/contact/ContactForm';
 
 const ContactPage = () => {
   return (
@@ -52,7 +52,7 @@ const ContactPage = () => {
         {/*Ô Contact và nơi ở*/}
         <div className="flex justify-center items-center lg:justify-center lg:items-center w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start w-fit">
-            <div className="hidden lg:block relative w-190 h-162.5 overflow-hidden py-5 top-3 z-0 animate-slide-left ml-30">
+            <div className="hidden lg:block relative w-160 h-194 overflow-hidden py-5 top-3 z-0 animate-slide-left ">
               <img
                 src="/maplg.png"
                 alt="World map"

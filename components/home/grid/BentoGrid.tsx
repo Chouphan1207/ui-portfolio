@@ -1,15 +1,15 @@
 'use client';
 
 import { cn } from "@/utils/cn";
-import { BackgroundGradientAnimation } from "../../../shared/ui/GradientBg";
+import { BackgroundGradientAnimation } from "../../background/GradientBg";
 import { Globe } from "./GridGlobe";
 import { useState, useEffect, useRef } from "react";
 import animationData from '@/components/data/confetti.json';
 import dynamic from 'next/dynamic';
 import { useAnimation, useInView, motion, useScroll, useTransform } from 'framer-motion'; // 👈 added motion hooks
-import MagicButton from "../../../shared/ui/buttons/MagicButton";
+import MagicButton from "../../shared/buttons/MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
-const LottieClient = dynamic(() => import('@/components/LottieClient'), { ssr: false });
+const LottieClient = dynamic(() => import('@/components/background/LottieClient'), { ssr: false });
 
 import { useTheme } from "next-themes";
 

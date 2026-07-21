@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { useLoading } from '@/lib/loading/loading-context'
+import { useLoading } from '@/components/loading/loading-context'
 
 const LoadingIntro = () => {
   // Trạng thái quản lý phần trăm loading, trạng thái hoàn tất chạy số, và trạng thái gỡ khỏi DOM

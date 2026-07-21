@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { NAV_LINKS } from '@/shared/config/navigation'
+import { NAV_LINKS } from '@/app/config/navigation'
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false)

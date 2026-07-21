@@ -3,12 +3,11 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css"; // Kept locally in app layer for global styling
 
 // FSD Shared Layer Imports
-import { ThemeProvider } from "@/shared/ui/ThemeProvider";
-import { LoadingProvider } from "@/lib/loading/loading-context";
-import StoreProvider from "@/shared/state/provider";
+import { ThemeProvider } from "@/components/background/ThemeProvider";
+import { LoadingProvider } from "@/components/loading/loading-context";
 
 // FSD App Layer Core Layout Composition
-import ClientLayoutContent from "@/lib/loading/clientLayout";
+import ClientLayoutContent from "@/components/loading/clientLayout";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -36,9 +35,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LoadingProvider>
-            <StoreProvider>
               <ClientLayoutContent>{children}</ClientLayoutContent>
-            </StoreProvider>
           </LoadingProvider>
         </ThemeProvider>
       </body>

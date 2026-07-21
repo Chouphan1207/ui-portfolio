@@ -6,10 +6,9 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 
 import MobileNav from './MobileNav';
-import UserGrid from '../UserGrid';
-import ModeToggle from '@/components/Themes';
-import { useLoading } from '@/lib/loading/loading-context';
-import { NAV_LINKS } from '@/shared/config/navigation';
+import ModeToggle from '@/components/background/Themes';
+import { useLoading } from '@/components/loading/loading-context';
+import { NAV_LINKS } from '@/app/config/navigation';
 
 const Header = () => {
   const { isLoadingDone } = useLoading();
@@ -75,10 +74,9 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* Actions */}
-            <div className="flex items-center gap-6">
+            {/* Actions: Đã loại bỏ UserGrid, giữ lại ModeToggle và MobileNav với layout cân đối */}
+            <div className="flex items-center gap-4">
               <ModeToggle />
-              <UserGrid />
               <div className="md:hidden">
                 <MobileNav />
               </div>

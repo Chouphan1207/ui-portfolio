@@ -3,8 +3,14 @@ import { tools } from "../data";
 export default function InfiniteScrollTools() {
   return (
     <div className="relative py-10 bg-transparent overflow-hidden">
-      {/* Container áp dụng mask-image để mờ dần 2 cạnh */}
-      <div className="w-full mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)">
+      {/* Đã sửa cú pháp mask-image hoàn chỉnh và thêm webkit-mask cho tương thích mọi trình duyệt */}
+      <div
+        className="w-full"
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)"
+        }}
+      >
         <div className="flex animate-scroll whitespace-nowrap w-max gap-6">
           {[...tools, ...tools].map((tool, index) => (
             <div

@@ -2,9 +2,9 @@
 
 import { ReactNode } from "react";
 import { useLoading } from "./loading-context";
-import Header from "@/shared/ui/navBar/Header";
-import LoadingIntro from "@/lib/loading/LoadingIntro";
-import PageTransition from "@/shared/ui/PageTransition";
+import Header from "@/components/navBar/Header";
+import LoadingIntro from "@/components/loading/LoadingIntro";
+import PageTransition from "@/components/loading/PageTransition";
 
 export default function ClientLayoutContent({ children }: { children: ReactNode }) {
   const { isLoadingDone } = useLoading();

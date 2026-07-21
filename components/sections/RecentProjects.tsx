@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import { Timeline } from "@/components/services/Timeline";
 import { timeline_projects } from "../data";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { Button } from "@/shared/ui/buttons/button"; // 👈 Your custom Button imported here
+import { Button } from "@/components/shared/buttons/button"; // 👈 Your custom Button imported here
 import "keen-slider/keen-slider.min.css";
 
 // Isolated sub-component for the parallax calculation
